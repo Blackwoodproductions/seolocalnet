@@ -3,7 +3,7 @@ import { ArrowRight, Zap, Globe, TrendingUp } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40">
       {/* Clean gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20"></div>
 
