@@ -6,57 +6,109 @@
 
 @layer base {
   :root {
-    /* Dark premium theme with rich purple */
-    --background: 250 30% 6%;
-    --foreground: 210 40% 98%;
+    /* Light theme with seolocal.it.com blue */
+    --background: 210 40% 98%;
+    --foreground: 210 30% 15%;
 
-    --card: 250 30% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 15%;
 
-    --popover: 250 30% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 15%;
 
-    /* Rich purple primary */
-    --primary: 270 80% 65%;
-    --primary-foreground: 250 30% 6%;
+    /* Sky blue primary matching seolocal.it.com */
+    --primary: 197 85% 51%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Deep slate secondary */
-    --secondary: 250 25% 14%;
-    --secondary-foreground: 210 40% 98%;
+    /* Light gray secondary */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 30% 15%;
 
-    --muted: 250 25% 18%;
-    --muted-foreground: 250 15% 55%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 15% 45%;
 
-    /* Rose gold accent */
-    --accent: 350 70% 65%;
-    --accent-foreground: 250 30% 6%;
+    /* Complementary accent - slightly deeper blue */
+    --accent: 205 90% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 250 25% 18%;
-    --input: 250 25% 18%;
-    --ring: 270 80% 65%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 197 85% 51%;
 
     --radius: 0.75rem;
 
     /* Custom colors */
-    --glow-primary: 270 80% 65%;
-    --glow-accent: 350 70% 65%;
-    --surface-dark: 250 30% 4%;
-    --surface-light: 250 25% 12%;
-    --gradient-start: 270 80% 65%;
-    --gradient-end: 290 70% 55%;
+    --glow-primary: 197 85% 51%;
+    --glow-accent: 205 90% 45%;
+    --surface-dark: 210 20% 94%;
+    --surface-light: 210 20% 98%;
+    --gradient-start: 197 85% 51%;
+    --gradient-end: 205 90% 45%;
 
     /* Sidebar */
-    --sidebar-background: 250 30% 6%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 30% 15%;
+    --sidebar-primary: 197 85% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 210 30% 15%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 197 85% 51%;
+  }
+
+  .dark {
+    /* Dark premium theme with blue */
+    --background: 215 30% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 30% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 30% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Sky blue primary */
+    --primary: 197 85% 51%;
+    --primary-foreground: 215 30% 8%;
+
+    /* Deep slate secondary */
+    --secondary: 215 25% 16%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 20%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Lighter blue accent */
+    --accent: 200 90% 60%;
+    --accent-foreground: 215 30% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 197 85% 51%;
+
+    /* Custom colors */
+    --glow-primary: 197 85% 51%;
+    --glow-accent: 200 90% 60%;
+    --surface-dark: 215 30% 6%;
+    --surface-light: 215 25% 14%;
+    --gradient-start: 197 85% 51%;
+    --gradient-end: 200 90% 60%;
+
+    /* Sidebar */
+    --sidebar-background: 215 30% 8%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 270 80% 65%;
-    --sidebar-primary-foreground: 250 30% 6%;
-    --sidebar-accent: 250 25% 14%;
+    --sidebar-primary: 197 85% 51%;
+    --sidebar-primary-foreground: 215 30% 8%;
+    --sidebar-accent: 215 25% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 250 25% 18%;
-    --sidebar-ring: 270 80% 65%;
+    --sidebar-border: 215 25% 20%;
+    --sidebar-ring: 197 85% 51%;
   }
 }
 
