@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import seolocalLogo from "@/assets/seolocal-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,16 +25,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="font-display font-black text-primary-foreground text-lg">S</span>
-              </div>
-              <div className="absolute inset-0 rounded-lg bg-primary/30 blur-lg -z-10"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-xl text-foreground">SEOLOCAL</span>
-              <span className="text-[10px] text-muted-foreground tracking-widest uppercase">by Blackwood Productions</span>
-            </div>
+            <img 
+              src={seolocalLogo} 
+              alt="SEOLocal Logo" 
+              className="h-10 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
