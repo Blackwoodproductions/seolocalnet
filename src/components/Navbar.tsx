@@ -28,7 +28,7 @@ const Navbar = () => {
             <img 
               src={seolocalLogo} 
               alt="SEOLocal Logo" 
-              className="h-10 w-auto"
+              className="h-10 w-auto dark:invert-0 invert dark:brightness-100 brightness-0"
             />
           </a>
 
