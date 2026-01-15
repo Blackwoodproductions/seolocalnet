@@ -52,18 +52,18 @@ const CTA = () => {
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground">
             <a
-              href="mailto:partners@seolocal.com"
+              href="mailto:support@blackwoodproductions.com"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <Mail size={18} />
-              <span>partners@seolocal.com</span>
+              <span>support@blackwoodproductions.com</span>
             </a>
             <a
-              href="tel:+18005551234"
+              href="tel:+18582017994"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <Phone size={18} />
-              <span>1-800-555-1234</span>
+              <span>858-201-7994</span>
             </a>
           </div>
         </motion.div>
