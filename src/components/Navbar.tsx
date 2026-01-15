@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import seolocalLogo from "@/assets/seolocal-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,14 +24,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="relative flex items-center justify-center w-9 h-9">
-              <Shield className="w-9 h-9 text-primary fill-primary/20" strokeWidth={1.5} />
-              <span className="absolute text-[10px] font-bold text-primary">ai</span>
-            </div>
-            <span className="font-display font-bold text-xl text-foreground">
-              SEO<span className="text-primary">local</span><span className="text-muted-foreground">.net</span>
-            </span>
+          <a href="#" className="flex items-center gap-3">
+            <img 
+              src={seolocalLogo} 
+              alt="SEOLocal Logo" 
+              className="h-10 w-auto dark:invert-0 invert dark:brightness-100 brightness-0"
+            />
           </a>
 
           {/* Desktop Navigation */}
