@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +49,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons + Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="#"
@@ -59,6 +60,7 @@ const Navbar = () => {
             <a href="#demo" className="btn-futuristic text-sm">
               Get Started
             </a>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,6 +99,9 @@ const Navbar = () => {
                   <a href="#demo" className="btn-futuristic text-center text-sm">
                     Get Started
                   </a>
+                  <div className="pt-2">
+                    <ThemeToggle />
+                  </div>
                 </div>
               </div>
             </motion.div>
