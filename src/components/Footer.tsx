@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { Twitter, Linkedin, Facebook, Youtube } from "lucide-react";
+import { Linkedin, Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import seolocalLogo from "@/assets/seolocal-logo.png";
 
 const footerLinks = {
   Product: ["Features", "Pricing", "Integrations", "Changelog"],
@@ -9,10 +9,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Twitter, href: "#" },
-  { icon: Linkedin, href: "#" },
-  { icon: Facebook, href: "#" },
-  { icon: Youtube, href: "#" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61573406406956" },
+  { icon: Instagram, href: "https://www.instagram.com/seolocal.it/" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/seo-local-io/" },
 ];
 
 const Footer = () => {
@@ -23,28 +22,47 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-3 mb-6">
-              <div className="relative">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                  <span className="font-display font-black text-primary-foreground text-lg">S</span>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-xl text-foreground">SEOLOCAL</span>
-                <span className="text-[10px] text-muted-foreground tracking-widest uppercase">
-                  by Blackwood Productions
-                </span>
-              </div>
+              <img 
+                src={seolocalLogo} 
+                alt="SEOLocal Logo" 
+                className="h-10 w-auto invert dark:invert-0"
+              />
             </a>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs">
               The industry's most powerful white-label SEO platform. 22 years of innovation 
               helping agencies deliver results.
             </p>
+            
+            {/* Contact Information */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-start gap-3 text-muted-foreground text-sm">
+                <MapPin size={16} className="mt-0.5 flex-shrink-0" />
+                <span>117 NE 1st Avenue, 9th Floor #1046<br />Miami, FL 33131</span>
+              </div>
+              <a 
+                href="tel:858-201-7994" 
+                className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors"
+              >
+                <Phone size={16} className="flex-shrink-0" />
+                <span>858-201-7994</span>
+              </a>
+              <a 
+                href="mailto:support@blackwoodproductions.com" 
+                className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors"
+              >
+                <Mail size={16} className="flex-shrink-0" />
+                <span>support@blackwoodproductions.com</span>
+              </a>
+            </div>
+
             {/* Social Links */}
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
                 >
                   <social.icon size={18} />
