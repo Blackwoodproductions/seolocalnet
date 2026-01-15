@@ -6,13 +6,15 @@ const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check for saved preference or system preference
+    // Check for saved preference - default to light mode for new users
     const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     
-    if (saved === "dark" || (!saved && prefersDark)) {
+    if (saved === "dark") {
       setIsDark(true);
       document.documentElement.classList.add("dark");
+    } else {
+      // Ensure light mode is set for new visitors
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
