@@ -63,8 +63,8 @@ const Testimonials = () => {
                 <Quote className="w-10 h-10 text-primary/20 mb-4" />
 
                 {/* Stars */}
-                <div className="flex gap-1 mb-4 text-primary">
-                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-[#754ee9]" />)}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent text-accent bg-black/0" />)}
                 </div>
 
                 {/* Quote */}
