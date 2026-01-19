@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone } from "lucide-react";
-
 const CTA = () => {
-  return (
-    <section id="demo" className="py-24 relative overflow-hidden">
+  return <section id="demo" className="py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
@@ -14,13 +12,17 @@ const CTA = () => {
       <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-accent/20 rounded-full blur-[100px]"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 40
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6
+      }} className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-8">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
@@ -40,7 +42,7 @@ const CTA = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a href="#" className="btn-futuristic flex items-center gap-2 text-lg">
+            <a href="#" className="btn-futuristic flex items-center gap-2 text-lg text-primary-foreground">
               Start Your Free Trial
               <ArrowRight size={20} />
             </a>
@@ -51,25 +53,17 @@ const CTA = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground">
-            <a
-              href="mailto:support@blackwoodproductions.com"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
-            >
+            <a href="mailto:support@blackwoodproductions.com" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={18} />
               <span>support@blackwoodproductions.com</span>
             </a>
-            <a
-              href="tel:+18582017994"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
-            >
+            <a href="tel:+18582017994" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={18} />
               <span>858-201-7994</span>
             </a>
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
