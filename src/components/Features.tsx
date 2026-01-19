@@ -80,7 +80,7 @@ const Features = () => {
               <div className="h-full glass-card rounded-2xl p-8 transition-all duration-500 hover:border-primary/50 hover:border-glow-cyan">
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-7 h-7 bg-primary text-[#754ee9]" />
+                  <feature.icon className="w-7 h-7 text-primary bg-black/0" />
                 </div>
 
                 {/* Highlight Badge */}
