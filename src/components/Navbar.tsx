@@ -41,7 +41,7 @@ const Navbar = () => {
 
           {/* CTA Buttons + Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="#" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">
+            <a href="https://login.seolocal.it.com/" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">
               Login
             </a>
             <a href="#demo" className="btn-futuristic text-sm text-primary-foreground">
@@ -73,7 +73,7 @@ const Navbar = () => {
                     {link.name}
                   </a>)}
                 <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                  <a href="#" className="text-foreground font-medium py-2">
+                  <a href="https://login.seolocal.it.com/" className="text-foreground font-medium py-2">
                     Login
                   </a>
                   <a href="#demo" className="btn-futuristic text-center text-sm">
