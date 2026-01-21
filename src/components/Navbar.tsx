@@ -14,9 +14,6 @@ const Navbar = () => {
   }, {
     name: "Platform",
     href: "#platform"
-  }, {
-    name: "Pricing",
-    href: "#pricing"
   }];
   return <motion.nav initial={{
     y: -100
