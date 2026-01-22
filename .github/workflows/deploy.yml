@@ -1,0 +1,62 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build application
+      run: npm run build
+
+    - name: Deploy to server
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: 522
+        source: "dist/"
+        target: "/home/seolocal/public_html/"
+        rm: true  # Remove existing files before copying
+    
+    - name: Move files from dist to public_html root
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: 522
+        script: |
+          if [ -d /home/seolocal/public_html/dist ]; then
+            mv /home/seolocal/public_html/dist/* /home/seolocal/public_html/ 2>/dev/null || true
+            mv /home/seolocal/public_html/dist/.* /home/seolocal/public_html/ 2>/dev/null || true
+            rmdir /home/seolocal/public_html/dist 2>/dev/null || true
+          fi
+    
+    - name: Fix file permissions
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: 522
+        script: |
+          chmod 755 /home/seolocal/public_html
+          find /home/seolocal/public_html -type d -exec chmod 755 {} \;
+          find /home/seolocal/public_html -type f -exec chmod 644 {} \;
