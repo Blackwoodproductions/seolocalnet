@@ -1,0 +1,4 @@
+# Redirect www to non-www (works for both HTTP and HTTPS)
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.seolocal\.net$ [NC]
+RewriteRule ^(.*)$ https://seolocal.net/$1 [R=301,L]
