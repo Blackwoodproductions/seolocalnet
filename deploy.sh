@@ -14,12 +14,8 @@ git pull --ff-only
 echo "Git pull completed"
 
 # Build using Docker to avoid Node installation issues
-echo "Starting npm ci..."
-docker run --rm -v "$REPO_DIR:/app" -w /app node:22 npm ci
-echo "npm ci completed"
-
-echo "Starting npm run build..."
-docker run --rm -v "$REPO_DIR:/app" -w /app node:22 npm run build
+echo "Starting npm ci and build..."
+docker run --rm -v "$REPO_DIR:/app" -w /app node:22 sh -c "npm ci --no-audit --no-fund && npm run build"
 echo "Build completed"
 
 echo "Starting rsync..."
