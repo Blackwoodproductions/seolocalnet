@@ -81,6 +81,8 @@ const Footer = () => {
                   const legalRoutes: Record<string, string> = {
                     "Privacy Policy": "/privacy",
                     "Terms of Service": "/terms",
+                    "Cookie Policy": "/cookies",
+                    "Security": "/security",
                   };
                   const route = legalRoutes[link];
                   return (
