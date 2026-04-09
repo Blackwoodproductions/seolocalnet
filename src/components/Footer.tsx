@@ -77,16 +77,32 @@ const Footer = () => {
             <div key={category}>
               <h4 className="font-display font-semibold text-foreground mb-4">{category}</h4>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const legalRoutes: Record<string, string> = {
+                    "Privacy Policy": "/privacy",
+                    "Terms of Service": "/terms",
+                  };
+                  const route = legalRoutes[link];
+                  return (
+                    <li key={link}>
+                      {route ? (
+                        <Link
+                          to={route}
+                          className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                        >
+                          {link}
+                        </Link>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                        >
+                          {link}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
