@@ -1,11 +1,12 @@
 import { Linkedin, Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import seolocalLogo from "@/assets/seolocal-logo.png";
 
 const footerLinks = {
   Product: ["Features", "Pricing", "Integrations", "Changelog"],
   Resources: ["Documentation", "Help Center", "Blog", "Webinars"],
   Company: ["About Us", "Careers", "Contact", "Partners"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  Legal: ["Privacy Policy", "Terms of Service"],
 };
 
 const socialLinks = [
@@ -76,16 +77,32 @@ const Footer = () => {
             <div key={category}>
               <h4 className="font-display font-semibold text-foreground mb-4">{category}</h4>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const legalRoutes: Record<string, string> = {
+                    "Privacy Policy": "/privacy",
+                    "Terms of Service": "/terms",
+                  };
+                  const route = legalRoutes[link];
+                  return (
+                    <li key={link}>
+                      {route ? (
+                        <Link
+                          to={route}
+                          className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                        >
+                          {link}
+                        </Link>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                        >
+                          {link}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
