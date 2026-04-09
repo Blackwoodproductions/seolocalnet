@@ -6,7 +6,7 @@ const footerLinks = {
   Product: ["Features", "Pricing", "Integrations", "Changelog"],
   Resources: ["Documentation", "Help Center", "Blog", "Webinars"],
   Company: ["About Us", "Careers", "Contact", "Partners"],
-  Legal: ["Privacy Policy", "Terms of Service"],
+  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"],
 };
 
 const socialLinks = [
