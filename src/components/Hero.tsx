@@ -60,14 +60,14 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="font-display text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">
-             <span className="text-foreground">The Only </span>
+             <span className="text-white">The Only </span>
             <motion.span
               className="text-primary inline-block relative"
               initial={{ backgroundSize: "0% 100%" }}
               animate={{ backgroundSize: "100% 100%" }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               style={{
-                backgroundImage: "linear-gradient(120deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.15) 100%)",
+                backgroundImage: "linear-gradient(120deg, hsl(197 85% 51% / 0.15) 0%, hsl(197 85% 51% / 0.15) 100%)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "0 88%",
                 padding: "0 0.15em",
@@ -82,7 +82,7 @@ const Hero = () => {
               </motion.span>
             </motion.span>
             <br />
-            <span className="text-foreground">Platform You'll Ever Need</span>
+            <span className="text-white">Platform You'll Ever Need</span>
           </motion.h1>
 
           {/* Subheading */}
