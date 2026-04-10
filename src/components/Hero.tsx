@@ -95,7 +95,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.2
-        }} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+        }} className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
             AI-powered content that reverse-engineers your competition. Automated niche linking 
             from thousands of categorized real business sites.
           </motion.p>
@@ -140,7 +140,7 @@ const Hero = () => {
           }, {
             icon: TrendingUp,
             text: "Rank Tracking"
-          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/50 border border-border/50">
+          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10">
                 <feature.icon size={16} className="text-accent" />
             <span className="text-white/70 text-sm font-medium">{feature.text}</span>
               </div>)}
@@ -158,7 +158,7 @@ const Hero = () => {
         duration: 0.8,
         delay: 0.5
       }} className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border/50 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
             {[{
             value: "500+",
             label: "Agency Partners"
@@ -171,9 +171,9 @@ const Hero = () => {
           }, {
             value: "10K+",
             label: "Client Websites"
-          }].map((stat, index) => <div key={index} className="bg-card p-8 text-center">
+          }].map((stat, index) => <div key={index} className="bg-[#0a1220] p-8 text-center">
                 <div className="stat-value text-4xl md:text-5xl mb-2">{stat.value}</div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
+                <div className="text-white/50 text-sm">{stat.label}</div>
               </div>)}
           </div>
         </motion.div>
