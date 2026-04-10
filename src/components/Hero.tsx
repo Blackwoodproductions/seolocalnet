@@ -2,19 +2,36 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, Globe, TrendingUp } from "lucide-react";
 import ParticleNetwork from "./ParticleNetwork";
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40">
-      {/* Clean gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20"></div>
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40" style={{ backgroundColor: '#030608' }}>
+      {/* Circular blur animations */}
+      <motion.div
+        className="absolute w-[500px] h-[500px] rounded-full opacity-20"
+        style={{ background: 'radial-gradient(circle, hsl(197 85% 51% / 0.4), transparent 70%)', filter: 'blur(80px)', top: '10%', left: '15%' }}
+        animate={{ x: [0, 60, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.2, 0.9, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-[400px] h-[400px] rounded-full opacity-15"
+        style={{ background: 'radial-gradient(circle, hsl(205 90% 45% / 0.5), transparent 70%)', filter: 'blur(100px)', bottom: '15%', right: '10%' }}
+        animate={{ x: [0, -50, 40, 0], y: [0, 50, -20, 0], scale: [1, 0.85, 1.15, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-[350px] h-[350px] rounded-full opacity-10"
+        style={{ background: 'radial-gradient(circle, hsl(197 85% 60% / 0.5), transparent 70%)', filter: 'blur(90px)', top: '40%', right: '35%' }}
+        animate={{ x: [0, 30, -50, 0], y: [0, -60, 20, 0], scale: [1, 1.1, 0.95, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-20"></div>
+      <div className="absolute inset-0 grid-pattern opacity-10"></div>
 
       {/* Animated connecting dots */}
       <ParticleNetwork />
 
       {/* Decorative lines */}
-      <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute bottom-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      <div className="absolute bottom-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
