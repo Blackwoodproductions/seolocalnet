@@ -2,19 +2,36 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, Globe, TrendingUp } from "lucide-react";
 import ParticleNetwork from "./ParticleNetwork";
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40">
-      {/* Clean gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20"></div>
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40" style={{ backgroundColor: '#030608' }}>
+      {/* Circular blur animations */}
+      <motion.div
+        className="absolute w-[500px] h-[500px] rounded-full opacity-20"
+        style={{ background: 'radial-gradient(circle, hsl(197 85% 51% / 0.4), transparent 70%)', filter: 'blur(80px)', top: '10%', left: '15%' }}
+        animate={{ x: [0, 60, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.2, 0.9, 1] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-[400px] h-[400px] rounded-full opacity-15"
+        style={{ background: 'radial-gradient(circle, hsl(205 90% 45% / 0.5), transparent 70%)', filter: 'blur(100px)', bottom: '15%', right: '10%' }}
+        animate={{ x: [0, -50, 40, 0], y: [0, 50, -20, 0], scale: [1, 0.85, 1.15, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-[350px] h-[350px] rounded-full opacity-10"
+        style={{ background: 'radial-gradient(circle, hsl(197 85% 60% / 0.5), transparent 70%)', filter: 'blur(90px)', top: '40%', right: '35%' }}
+        animate={{ x: [0, 30, -50, 0], y: [0, -60, 20, 0], scale: [1, 1.1, 0.95, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-20"></div>
+      <div className="absolute inset-0 grid-pattern opacity-10"></div>
 
       {/* Animated connecting dots */}
       <ParticleNetwork />
 
       {/* Decorative lines */}
-      <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-      <div className="absolute bottom-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+      <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      <div className="absolute bottom-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
@@ -43,14 +60,14 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="font-display text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">
-             <span className="text-foreground">The Only </span>
+             <span className="text-white">The Only </span>
             <motion.span
               className="text-primary inline-block relative"
               initial={{ backgroundSize: "0% 100%" }}
               animate={{ backgroundSize: "100% 100%" }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               style={{
-                backgroundImage: "linear-gradient(120deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--primary) / 0.15) 100%)",
+                backgroundImage: "linear-gradient(120deg, hsl(197 85% 51% / 0.15) 0%, hsl(197 85% 51% / 0.15) 100%)",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "0 88%",
                 padding: "0 0.15em",
@@ -65,7 +82,7 @@ const Hero = () => {
               </motion.span>
             </motion.span>
             <br />
-            <span className="text-foreground">Platform You'll Ever Need</span>
+            <span className="text-white">Platform You'll Ever Need</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -78,7 +95,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.2
-        }} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+        }} className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
             AI-powered content that reverse-engineers your competition. Automated niche linking 
             from thousands of categorized real business sites.
           </motion.p>
@@ -123,9 +140,9 @@ const Hero = () => {
           }, {
             icon: TrendingUp,
             text: "Rank Tracking"
-          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/50 border border-border/50">
+          }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10">
                 <feature.icon size={16} className="text-accent" />
-                <span className="text-sm text-foreground/80 font-medium">{feature.text}</span>
+            <span className="text-white/70 text-sm font-medium">{feature.text}</span>
               </div>)}
           </motion.div>
         </div>
@@ -141,7 +158,7 @@ const Hero = () => {
         duration: 0.8,
         delay: 0.5
       }} className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border/50 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
             {[{
             value: "500+",
             label: "Agency Partners"
@@ -154,9 +171,9 @@ const Hero = () => {
           }, {
             value: "10K+",
             label: "Client Websites"
-          }].map((stat, index) => <div key={index} className="bg-card p-8 text-center">
+          }].map((stat, index) => <div key={index} className="bg-[#0a1220] p-8 text-center">
                 <div className="stat-value text-4xl md:text-5xl mb-2">{stat.value}</div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
+                <div className="text-white/50 text-sm">{stat.label}</div>
               </div>)}
           </div>
         </motion.div>
