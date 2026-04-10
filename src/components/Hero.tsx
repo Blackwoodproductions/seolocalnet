@@ -142,7 +142,7 @@ const Hero = () => {
             text: "Rank Tracking"
           }].map((feature, index) => <div key={index} className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary/50 border border-border/50">
                 <feature.icon size={16} className="text-accent" />
-                <span className="text-sm text-foreground/80 font-medium">{feature.text}</span>
+            <span className="text-white/70 text-sm font-medium">{feature.text}</span>
               </div>)}
           </motion.div>
         </div>
