@@ -31,14 +31,14 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.name} href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium">
+            {navLinks.map(link => <a key={link.name} href={link.href} className="text-white/70 hover:text-primary transition-colors duration-300 font-medium">
                 {link.name}
               </a>)}
           </div>
 
           {/* CTA Buttons + Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="https://login.seolocal.it.com/" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">
+            <a href="https://login.seolocal.it.com/" className="text-white hover:text-primary transition-colors duration-300 font-medium">
               Login
             </a>
             <a href="#demo" className="btn-futuristic text-sm text-primary-foreground">
