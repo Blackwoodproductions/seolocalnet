@@ -21,24 +21,24 @@ const Navbar = () => {
     y: 0
   }} transition={{
     duration: 0.6
-  }} className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-      <div className="container mx-auto px-6 py-4">
+  }} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/10" style={{ backgroundColor: 'rgba(3, 6, 8, 0.9)' }}>
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <img src={seolocalLogo} alt="SEOLocal Logo" className="h-10 w-auto invert dark:invert-0" />
+            <img src={seolocalLogo} alt="SEOLocal Logo" className="h-7 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map(link => <a key={link.name} href={link.href} className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium">
+            {navLinks.map(link => <a key={link.name} href={link.href} className="text-white/70 hover:text-primary transition-colors duration-300 font-medium">
                 {link.name}
               </a>)}
           </div>
 
           {/* CTA Buttons + Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="https://login.seolocal.it.com/" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">
+            <a href="https://login.seolocal.it.com/" className="text-white hover:text-primary transition-colors duration-300 font-medium">
               Login
             </a>
             <a href="#demo" className="btn-futuristic text-sm text-primary-foreground">
@@ -48,7 +48,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 text-foreground">
+          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 text-white">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
