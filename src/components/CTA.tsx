@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
+import ScrollParallax from "./ScrollParallax";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 const CTA = () => {
   return <section id="demo" className="py-32 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+      <ScrollParallax speed={-0.15} className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+      <ScrollParallax speed={-0.1} className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
 
       {/* Glowing Orbs */}
-      <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
-      <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-accent/20 rounded-full blur-[100px]"></div>
+      <ScrollParallax speed={-0.3} className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[100px]" />
+      <ScrollParallax speed={-0.2} className="absolute top-1/2 right-1/4 w-64 h-64 bg-accent/20 rounded-full blur-[100px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div initial={{
