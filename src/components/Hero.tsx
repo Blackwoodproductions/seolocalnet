@@ -185,7 +185,11 @@ const Hero = () => {
         }} className="w-1.5 h-1.5 rounded-full bg-primary" />
         </div>
       </motion.div>
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ zIndex: 20 }}></div>
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none" style={{ zIndex: 20 }}>
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="w-full h-16 md:h-20">
+          <polygon points="0,80 0,30 1200,80" className="fill-background" />
+        </svg>
+      </div>
     </section>;
 
 };
