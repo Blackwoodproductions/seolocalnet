@@ -118,7 +118,7 @@ const Hero = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.4
-        }} className="flex flex-wrap items-center justify-center gap-3 mb-24">
+        }} className="flex flex-wrap items-center justify-center gap-3 mb-16">
             {[{
             icon: Zap,
             text: "AI Content Engine"
@@ -175,7 +175,7 @@ const Hero = () => {
     }} transition={{
       delay: 1,
       duration: 1
-    }} className="relative z-10 mt-16 mb-16 flex justify-center">
+    }} className="relative z-10 mt-10 mb-10 flex justify-center">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
           <motion.div animate={{
           y: [0, 12, 0]
