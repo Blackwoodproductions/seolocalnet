@@ -40,7 +40,7 @@ const floatingHeadshots = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "#030608" }}>
+    <section <section className="py-32 relative overflow-hidden" style={{ backgroundColor: "#030608" }}> style={{ backgroundColor: "#030608" }}>
       {/* Top border line */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
 
