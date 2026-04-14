@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ScrollParallax from "./ScrollParallax";
 import { Brain, Link2, BarChart3, Users, Layers, Shield } from "lucide-react";
 const features = [{
   icon: Brain,
@@ -34,8 +35,8 @@ const features = [{
 const Features = () => {
   return <section id="features" className="py-32 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-      <div className="absolute inset-0 bg-gradient-radial opacity-50"></div>
+      <ScrollParallax speed={-0.15} className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <ScrollParallax speed={-0.3} className="absolute inset-0 bg-gradient-radial opacity-50" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

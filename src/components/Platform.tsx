@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
+import ScrollParallax from "./ScrollParallax";
 import { Check, Play } from "lucide-react";
 const platformFeatures = ["Full white-label dashboard with your branding", "Real-time keyword ranking across all major search engines", "AI-powered competitor content analysis", "Automated citation and backlink building", "Detailed analytics and visitor tracking", "Google My Business integration", "Multi-search engine rank tracking (Google, Yahoo, Bing)", "Map Pack, Rich Snippet, and AI Overview monitoring"];
 const Platform = () => {
   return <section id="platform" className="py-32 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent/10 rounded-full blur-[120px]"></div>
+      <ScrollParallax speed={-0.1} className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <ScrollParallax speed={-0.3} className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
+      <ScrollParallax speed={-0.2} className="absolute top-1/4 left-0 w-96 h-96 bg-accent/10 rounded-full blur-[120px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

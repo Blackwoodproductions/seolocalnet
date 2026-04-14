@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ScrollParallax from "./ScrollParallax";
 import { UserPlus, FolderOpen, Sparkles, TrendingUp } from "lucide-react";
 const steps = [{
   number: "01",
@@ -24,10 +25,8 @@ const steps = [{
 const HowItWorks = () => {
   return <section id="how-it-works" className="py-32 relative overflow-hidden bg-secondary/30">
       {/* Top Border Gradient */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
-
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px]"></div>
+      <ScrollParallax speed={-0.1} className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+      <ScrollParallax speed={-0.25} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
