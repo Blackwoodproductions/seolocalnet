@@ -185,19 +185,7 @@ const Hero = () => {
         }} className="w-1.5 h-1.5 rounded-full bg-primary" />
         </div>
       </motion.div>
-      {/* Zigzag diagonal separator */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none" style={{ zIndex: 20 }}>
-        <svg
-          viewBox="0 0 1200 80"
-          preserveAspectRatio="none"
-          className="w-full h-16 md:h-20"
-        >
-          <polygon
-            points="0,80 0,40 100,60 200,20 300,60 400,20 500,60 600,20 700,60 800,20 900,60 1000,20 1100,60 1200,40 1200,80"
-            className="fill-background"
-          />
-        </svg>
-      </div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ zIndex: 20 }}></div>
     </section>;
 
 };
