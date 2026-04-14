@@ -1,6 +1,6 @@
 import { Linkedin, Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import seolocalLogo from "@/assets/seolocal-logo.png";
+import seolocalLogo from "@/assets/seolocal-logo-white.png";
 
 const footerLinks = {
   Product: ["Features", "Pricing", "Integrations", "Changelog"],
@@ -26,7 +26,7 @@ const Footer = () => {
               <img 
                 src={seolocalLogo} 
                 alt="SEOLocal Logo" 
-                className="h-14 w-auto brightness-0 invert"
+                className="h-14 w-auto"
               />
             </a>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs">

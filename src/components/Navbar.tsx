@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
-import seolocalLogo from "@/assets/seolocal-logo.png";
+import seolocalLogo from "@/assets/seolocal-logo-white.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [{
