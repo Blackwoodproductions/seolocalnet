@@ -26,7 +26,7 @@ const Footer = () => {
               <img 
                 src={seolocalLogo} 
                 alt="SEOLocal Logo" 
-                className="h-14 w-auto"
+                className="h-14 w-auto opacity-80" style={{ filter: 'brightness(0.3) sepia(1) hue-rotate(190deg) saturate(3)' }}
               />
             </a>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs">
