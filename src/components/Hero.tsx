@@ -146,7 +146,7 @@ const Hero = () => {
         duration: 0.8,
         delay: 0.5
       }} className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[{
             value: "500+",
             label: "Agency Partners"
@@ -159,7 +159,7 @@ const Hero = () => {
           }, {
             value: "10K+",
             label: "Client Websites"
-          }].map((stat, index) => <div key={index} className="bg-[#0a1220] p-8 text-center">
+          }].map((stat, index) => <div key={index} className="bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-xl p-8 text-center">
                 <div className="stat-value text-4xl md:text-5xl mb-2">{stat.value}</div>
                 <div className="text-white/50 text-sm">{stat.label}</div>
               </div>)}
