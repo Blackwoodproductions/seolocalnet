@@ -175,7 +175,7 @@ const Hero = () => {
     }} transition={{
       delay: 1,
       duration: 1
-    }} className="relative z-10 mt-10 mb-10 flex justify-center">
+    }} className="relative z-10 mt-8 mb-8 flex justify-center">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
           <motion.div animate={{
           y: [0, 12, 0]
