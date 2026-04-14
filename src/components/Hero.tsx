@@ -145,7 +145,7 @@ const Hero = () => {
       }} transition={{
         duration: 0.8,
         delay: 0.5
-      }} className="max-w-4xl mx-auto mb-16">
+      }} className="max-w-4xl mx-auto mb-28">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[{
             value: "500+",
