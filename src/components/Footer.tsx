@@ -26,7 +26,7 @@ const Footer = () => {
               <img 
                 src={seolocalLogo} 
                 alt="SEOLocal Logo" 
-                className="h-10 w-auto invert dark:invert-0"
+                className="h-14 w-auto brightness-0 invert"
               />
             </a>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs">
