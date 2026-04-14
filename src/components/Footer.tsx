@@ -17,7 +17,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-surface-dark border-t border-transparent">
+    <footer className="relative bg-gradient-to-b from-background to-surface-dark">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Logo & Description */}
