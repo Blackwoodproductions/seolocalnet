@@ -145,7 +145,7 @@ const Hero = () => {
       }} transition={{
         duration: 0.8,
         delay: 0.5
-      }} className="max-w-4xl mx-auto mb-28">
+      }} className="max-w-4xl mx-auto mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[{
             value: "500+",
@@ -175,7 +175,7 @@ const Hero = () => {
     }} transition={{
       delay: 1,
       duration: 1
-    }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
+    }} className="relative z-10 my-10 flex justify-center">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
           <motion.div animate={{
           y: [0, 12, 0]
