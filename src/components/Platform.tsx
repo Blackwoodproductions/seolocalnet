@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Check, Play } from "lucide-react";
 const platformFeatures = ["Full white-label dashboard with your branding", "Real-time keyword ranking across all major search engines", "AI-powered competitor content analysis", "Automated citation and backlink building", "Detailed analytics and visitor tracking", "Google My Business integration", "Multi-search engine rank tracking (Google, Yahoo, Bing)", "Map Pack, Rich Snippet, and AI Overview monitoring"];
 const Platform = () => {
-  return <section id="platform" className="py-24 relative overflow-hidden">
+  return <section id="platform" className="py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>

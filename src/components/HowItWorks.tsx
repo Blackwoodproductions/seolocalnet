@@ -22,7 +22,7 @@ const steps = [{
   description: "Relevant backlinks flow automatically from our network of 1000s of real business sites. Watch rankings climb."
 }];
 const HowItWorks = () => {
-  return <section id="how-it-works" className="py-24 relative overflow-hidden bg-secondary/30">
+  return <section id="how-it-works" className="py-32 relative overflow-hidden bg-secondary/30">
       {/* Top Border Gradient */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
 

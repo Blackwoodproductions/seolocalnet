@@ -32,7 +32,7 @@ const features = [{
   highlight: "Industry Veterans"
 }];
 const Features = () => {
-  return <section id="features" className="py-24 relative overflow-hidden">
+  return <section id="features" className="py-32 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
       <div className="absolute inset-0 bg-gradient-radial opacity-50"></div>
