@@ -62,24 +62,12 @@ const Hero = () => {
         }} className="font-display text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">
              <span className="text-white">The Only </span>
             <motion.span
-              className="text-primary inline-block relative"
-              initial={{ backgroundSize: "0% 100%" }}
-              animate={{ backgroundSize: "100% 100%" }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              style={{
-                backgroundImage: "linear-gradient(120deg, hsl(197 85% 51% / 0.15) 0%, hsl(197 85% 51% / 0.15) 100%)",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "0 88%",
-                padding: "0 0.15em",
-              }}
+              className="text-accent text-glow-accent inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                White Label SEO
-              </motion.span>
+              White Label SEO
             </motion.span>
             <br />
             <span className="text-white">Platform You'll Ever Need</span>
