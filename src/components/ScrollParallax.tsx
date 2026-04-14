@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform, type MotionValue } from "framer-motion
 import { useRef, type ReactNode } from "react";
 
 interface ScrollParallaxProps {
-  children: ReactNode;
+  children?: ReactNode;
   speed?: number; // negative = slower (parallax up), positive = faster (parallax down)
   className?: string;
 }
