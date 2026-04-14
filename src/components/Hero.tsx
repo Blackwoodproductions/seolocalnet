@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, Globe, TrendingUp } from "lucide-react";
 import ParticleNetwork from "./ParticleNetwork";
 const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-40 pb-16" style={{ backgroundColor: '#030608' }}>
+  return <section className="relative flex flex-col items-center justify-center overflow-hidden pt-40 pb-32" style={{ backgroundColor: '#030608', minHeight: '100vh' }}>
       {/* Circular blur animations */}
       <motion.div
         className="absolute w-[500px] h-[500px] rounded-full opacity-20"
@@ -175,7 +175,7 @@ const Hero = () => {
     }} transition={{
       delay: 1,
       duration: 1
-    }} className="absolute bottom-28 left-1/2 -translate-x-1/2 z-10">
+    }} className="relative z-10 mt-16 mb-16 flex justify-center">
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
           <motion.div animate={{
           y: [0, 12, 0]
