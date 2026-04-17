@@ -15,9 +15,21 @@ const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/seo-local-io/" },
 ];
 
+const PAPER_TEXTURE = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")`;
+
 const Footer = () => {
   return (
-    <footer className="relative footer-animated-gradient">
+    <footer className="relative footer-animated-gradient overflow-hidden">
+      {/* Subtle paper grain texture */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none mix-blend-overlay"
+        style={{
+          backgroundImage: PAPER_TEXTURE,
+          backgroundSize: '220px 220px',
+          opacity: 0.25,
+        }}
+      />
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Logo & Description */}
