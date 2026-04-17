@@ -152,17 +152,17 @@ const Hero = () => {
       }} className="max-w-4xl mx-auto mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[{
-            value: "500+",
-            label: "Agency Partners"
+            value: "6+",
+            label: "Years of SEO Innovation"
           }, {
-            value: "22",
-            label: "Years Experience"
+            value: "3,167+",
+            label: "Domains in Our Network"
           }, {
-            value: "1M+",
-            label: "Keywords Ranked"
+            value: "10",
+            label: "Days to First Results"
           }, {
-            value: "10K+",
-            label: "Client Websites"
+            value: "25%",
+            label: "Cheaper Than Agencies"
           }].map((stat, index) => <div key={index} className="bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-xl p-8 text-center">
                 <div className="stat-value text-4xl md:text-5xl mb-2">{stat.value}</div>
                 <div className="text-white/50 text-sm">{stat.label}</div>
