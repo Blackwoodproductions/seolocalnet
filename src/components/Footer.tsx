@@ -99,14 +99,14 @@ const Footer = () => {
                       {route ? (
                         <Link
                           to={route}
-                          className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                          className="text-white/60 text-sm hover:text-primary transition-colors duration-300"
                         >
                           {link}
                         </Link>
                       ) : (
                         <a
                           href="#"
-                          className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                          className="text-white/60 text-sm hover:text-primary transition-colors duration-300"
                         >
                           {link}
                         </a>
