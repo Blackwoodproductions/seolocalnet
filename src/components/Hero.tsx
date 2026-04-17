@@ -48,9 +48,9 @@ const Hero = () => {
           y: 0
         }} transition={{
           duration: 0.6
-        }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+          }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-primary text-sm font-medium">22+ Years of SEO Innovation</span>
+            <span className="text-primary text-sm font-medium">Trusted by Thousands of Agencies</span>
           </motion.div>
 
           {/* Main Heading */}
