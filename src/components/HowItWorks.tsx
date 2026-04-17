@@ -61,6 +61,15 @@ const steps = [{
 }];
 const HowItWorks = () => {
   return <section id="how-it-works" className="py-32 relative overflow-hidden bg-secondary/30">
+      {/* SVG gradient definition for icon strokes */}
+      <svg width="0" height="0" className="absolute" aria-hidden="true">
+        <defs>
+          <linearGradient id="iconGradientSteps" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--primary))" />
+            <stop offset="100%" stopColor="hsl(var(--accent))" />
+          </linearGradient>
+        </defs>
+      </svg>
       {/* Top Border Gradient */}
       <ScrollParallax speed={-0.1} className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
       <ScrollParallax speed={-0.25} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px]" />
@@ -112,7 +121,7 @@ const HowItWorks = () => {
 
                   {/* Icon */}
                   <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-6 mt-4">
-                    <step.icon className="w-8 h-8 text-[#754ee9]" />
+                    <step.icon className="w-8 h-8" stroke="url(#iconGradientSteps)" />
                   </div>
 
                   {/* Content */}
