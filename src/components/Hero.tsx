@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap, Globe, TrendingUp } from "lucide-react";
 import ParticleNetwork from "./ParticleNetwork";
 import StarField from "./StarField";
+import CountUp from "./CountUp";
 const Hero = () => {
   return <section className="relative flex flex-col items-center justify-center overflow-hidden pt-40 pb-32" style={{ backgroundColor: '#030608', minHeight: '100vh' }}>
       {/* Outer space starfield background */}
@@ -166,7 +167,7 @@ const Hero = () => {
             value: "25%",
             label: "Cheaper Than Agencies"
           }].map((stat, index) => <div key={index} className="bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-xl p-8 text-center">
-                <div className="stat-value text-4xl md:text-5xl mb-2">{stat.value}</div>
+                <CountUp value={stat.value} className="stat-value text-4xl md:text-5xl mb-2 block" />
                 <div className="text-white/50 text-sm">{stat.label}</div>
               </div>)}
           </div>
