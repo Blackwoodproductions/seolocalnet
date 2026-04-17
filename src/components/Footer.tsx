@@ -120,11 +120,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/60 text-sm">
             © {new Date().getFullYear()} Blackwood Productions. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-white/60 text-sm">
             Built with 22 years of SEO expertise.
           </p>
         </div>
