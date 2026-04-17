@@ -26,8 +26,8 @@ const Footer = () => {
         className="absolute inset-0 pointer-events-none mix-blend-overlay"
         style={{
           backgroundImage: PAPER_TEXTURE,
-          backgroundSize: '220px 220px',
-          opacity: 0.25,
+          backgroundSize: '600px 600px',
+          opacity: 0.18,
         }}
       />
       <div className="container mx-auto px-6 py-16 relative z-10">
