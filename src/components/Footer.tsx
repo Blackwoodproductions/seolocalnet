@@ -17,13 +17,21 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative mt-32 md:mt-48" style={{ backgroundColor: '#030608' }}>
-      {/* Diagonal divider transitioning from light section into dark footer */}
+    <footer
+      className="relative mt-32 md:mt-48 footer-animated-gradient"
+    >
+      {/* Diagonal divider transitioning from light section into footer */}
       <div className="absolute left-0 w-full overflow-hidden leading-none pointer-events-none" style={{ top: 0, transform: 'translateY(-99%)', zIndex: 1 }}>
         <svg viewBox="0 0 1200 200" preserveAspectRatio="none" className="w-full h-32 md:h-48 block">
+          <defs>
+            <linearGradient id="footerDividerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="hsl(197 85% 51%)" />
+              <stop offset="100%" stopColor="hsl(270 80% 55%)" />
+            </linearGradient>
+          </defs>
           <path
             d="M0,200 L0,40 Q300,180 600,120 T1200,30 L1200,200 Z"
-            fill="#030608"
+            fill="url(#footerDividerGradient)"
           />
         </svg>
       </div>
