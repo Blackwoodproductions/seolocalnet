@@ -8,24 +8,56 @@ const Hero = () => {
       {/* Outer space starfield background */}
       <StarField />
 
-      {/* Circular blur animations */}
+      {/* Soft multi-color drifting gradient orbs (inspired by seolocal.net) */}
       <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full opacity-20"
-        style={{ background: 'radial-gradient(circle, hsl(197 85% 51% / 0.4), transparent 70%)', filter: 'blur(80px)', top: '10%', left: '15%' }}
-        animate={{ x: [0, 60, -30, 0], y: [0, -40, 30, 0], scale: [1, 1.2, 0.9, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: 700, height: 700,
+          background: 'radial-gradient(circle, hsl(45 100% 70% / 0.55), transparent 70%)',
+          filter: 'blur(90px)', top: '-5%', right: '-5%',
+        }}
+        animate={{ x: [0, 60, -40, 0], y: [0, 40, -30, 0], rotate: [0, 90, 180, 360], scale: [1, 1.1, 0.95, 1] }}
+        transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute w-[400px] h-[400px] rounded-full opacity-15"
-        style={{ background: 'radial-gradient(circle, hsl(205 90% 45% / 0.5), transparent 70%)', filter: 'blur(100px)', bottom: '15%', right: '10%' }}
-        animate={{ x: [0, -50, 40, 0], y: [0, 50, -20, 0], scale: [1, 0.85, 1.15, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: 600, height: 600,
+          background: 'radial-gradient(circle, hsl(197 90% 65% / 0.45), transparent 70%)',
+          filter: 'blur(100px)', top: '20%', left: '-8%',
+        }}
+        animate={{ x: [0, 80, -50, 0], y: [0, -40, 50, 0], rotate: [0, -90, -180, -360], scale: [1, 1.15, 0.9, 1] }}
+        transition={{ duration: 35, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute w-[350px] h-[350px] rounded-full opacity-10"
-        style={{ background: 'radial-gradient(circle, hsl(197 85% 60% / 0.5), transparent 70%)', filter: 'blur(90px)', top: '40%', right: '35%' }}
-        animate={{ x: [0, 30, -50, 0], y: [0, -60, 20, 0], scale: [1, 1.1, 0.95, 1] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: 550, height: 550,
+          background: 'radial-gradient(circle, hsl(140 70% 60% / 0.35), transparent 70%)',
+          filter: 'blur(110px)', bottom: '-5%', left: '5%',
+        }}
+        animate={{ x: [0, -50, 60, 0], y: [0, -60, 30, 0], rotate: [0, 120, 240, 360], scale: [1, 0.9, 1.1, 1] }}
+        transition={{ duration: 40, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: 500, height: 500,
+          background: 'radial-gradient(circle, hsl(330 85% 70% / 0.4), transparent 70%)',
+          filter: 'blur(100px)', bottom: '5%', right: '8%',
+        }}
+        animate={{ x: [0, -70, 40, 0], y: [0, 50, -40, 0], rotate: [0, -120, -240, -360], scale: [1, 1.1, 0.95, 1] }}
+        transition={{ duration: 38, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute rounded-full pointer-events-none"
+        style={{
+          width: 450, height: 450,
+          background: 'radial-gradient(circle, hsl(265 80% 65% / 0.4), transparent 70%)',
+          filter: 'blur(110px)', top: '40%', right: '25%',
+        }}
+        animate={{ x: [0, 50, -60, 0], y: [0, -50, 40, 0], rotate: [0, 90, 180, 360], scale: [1, 1.05, 0.95, 1] }}
+        transition={{ duration: 32, repeat: Infinity, ease: 'easeInOut' }}
       />
 
       {/* Subtle grid pattern */}
