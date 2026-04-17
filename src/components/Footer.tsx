@@ -20,8 +20,8 @@ const SVG_MASK =
 
 const Footer = () => {
   return (
-    <footer className="relative mt-32 md:mt-48">
-      {/* Divider: same animated gradient as footer body, shaped via SVG mask */}
+    <footer className="relative mt-32 md:mt-48 footer-animated-gradient">
+      {/* Divider: same animated gradient as footer body, shaped via SVG mask so it flows continuously */}
       <div
         aria-hidden
         className="absolute left-0 w-full h-32 md:h-48 footer-animated-gradient pointer-events-none"
@@ -36,8 +36,6 @@ const Footer = () => {
           maskRepeat: 'no-repeat',
         }}
       />
-      <div className="footer-animated-gradient absolute inset-0 -z-10" />
-      <div className="footer-animated-gradient" style={{ position: 'absolute', inset: 0 }} />
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Logo & Description */}
