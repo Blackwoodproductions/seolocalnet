@@ -99,10 +99,7 @@ const Features = () => {
                   </div>
                 </div>
 
-                {/* Content */}
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                  {feature.title}
-                </h3>
+                {/* Description */}
                 <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
