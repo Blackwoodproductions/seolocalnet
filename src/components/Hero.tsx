@@ -103,8 +103,8 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.3
         }} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <a href="#demo" className="btn-futuristic flex items-center gap-2 text-lg text-primary-foreground">
-              Start Free Trial
+            <a href="https://calendly.com/q-ratansi/seolocal" target="_blank" rel="noopener noreferrer" className="btn-futuristic flex items-center gap-2 text-lg text-primary-foreground">
+              Book A Demo
               <ArrowRight size={20} />
             </a>
             <a href="#platform" className="btn-outline-glow flex items-center gap-2 text-lg">
