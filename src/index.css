@@ -162,7 +162,7 @@
   /* Glass card effect */
   .glass-card {
     @apply bg-card/50 backdrop-blur-xl border border-border/50;
-    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+    box-shadow: 0 12px 60px hsl(0 0% 0% / 0.12);
   }
 
   /* Animated gradient border */
