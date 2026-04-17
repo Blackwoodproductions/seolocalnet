@@ -1,6 +1,36 @@
 import { motion } from "framer-motion";
 import ScrollParallax from "./ScrollParallax";
-import { UserPlus, FolderOpen, Sparkles, TrendingUp } from "lucide-react";
+import { UserPlus, FolderOpen, Sparkles, TrendingUp, ArrowRight } from "lucide-react";
+
+// Hand-drawn curved arrow pointing right (with slight wobble for sketchy feel)
+const CurvedArrow = ({ flip = false }: { flip?: boolean }) => (
+  <svg
+    viewBox="0 0 120 60"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-12 text-primary"
+    style={{ transform: flip ? "scaleY(-1)" : undefined }}
+    aria-hidden="true"
+  >
+    <path
+      d="M5 35 C 25 5, 60 5, 90 28"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeDasharray="1 0"
+      fill="none"
+      style={{ filter: "drop-shadow(0 0 6px hsl(var(--primary) / 0.6))" }}
+    />
+    <path
+      d="M90 28 L 82 22 M90 28 L 84 36"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
+      style={{ filter: "drop-shadow(0 0 6px hsl(var(--primary) / 0.6))" }}
+    />
+  </svg>
+);
 const steps = [{
   number: "01",
   icon: UserPlus,
@@ -54,9 +84,6 @@ const HowItWorks = () => {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary -translate-y-1/2 opacity-30"></div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => <motion.div key={index} initial={{
             opacity: 0,
@@ -89,9 +116,38 @@ const HowItWorks = () => {
                     {step.description}
                   </p>
                 </div>
+
+                {/* Hand-drawn curved arrow to next step (desktop only, not after last) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-6 -translate-y-1/2 w-12 z-20 pointer-events-none">
+                    <CurvedArrow flip={index % 2 === 1} />
+                  </div>
+                )}
               </motion.div>)}
           </div>
         </div>
+
+        {/* Call To Action Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-20"
+        >
+          <a
+            href="https://calendly.com/q-ratansi/seolocal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-futuristic flex items-center gap-2 text-lg text-primary-foreground"
+          >
+            Book A Demo
+            <ArrowRight size={20} />
+          </a>
+          <a href="#platform" className="btn-outline-glow flex items-center gap-2 text-lg">
+            See The Platform
+          </a>
+        </motion.div>
       </div>
     </section>;
 };
