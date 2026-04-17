@@ -45,7 +45,7 @@ const HowItWorks = () => {
             Simple Process
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            How <span className="text-accent text-glow-gold">SEOLOCAL</span> Works
+            How <span className="text-primary text-glow-cyan">SEOLOCAL</span> Works
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Get your agency up and running with the most powerful white-label SEO platform in minutes.
