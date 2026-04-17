@@ -3,7 +3,7 @@ import ScrollParallax from "./ScrollParallax";
 import { UserPlus, FolderOpen, Sparkles, TrendingUp, ArrowRight } from "lucide-react";
 
 // Hand-drawn curved arrow pointing right (with slight wobble for sketchy feel)
-const CurvedArrow = ({ flip = false }: { flip?: boolean }) => (
+const CurvedArrow = ({ flip = false, delay = 0 }: { flip?: boolean; delay?: number }) => (
   <svg
     viewBox="0 0 120 60"
     fill="none"
@@ -12,22 +12,29 @@ const CurvedArrow = ({ flip = false }: { flip?: boolean }) => (
     style={{ transform: flip ? "scaleY(-1)" : undefined }}
     aria-hidden="true"
   >
-    <path
+    <motion.path
       d="M5 35 C 25 5, 60 5, 90 28"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
-      strokeDasharray="1 0"
       fill="none"
       style={{ filter: "drop-shadow(0 0 6px hsl(var(--primary) / 0.6))" }}
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 1.1, delay, ease: "easeInOut" }}
     />
-    <path
+    <motion.path
       d="M90 28 L 82 22 M90 28 L 84 36"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       fill="none"
       style={{ filter: "drop-shadow(0 0 6px hsl(var(--primary) / 0.6))" }}
+      initial={{ pathLength: 0, opacity: 0 }}
+      whileInView={{ pathLength: 1, opacity: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.4, delay: delay + 1.0, ease: "easeOut" }}
     />
   </svg>
 );
