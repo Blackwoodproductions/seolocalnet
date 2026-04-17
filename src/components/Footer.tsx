@@ -84,7 +84,7 @@ const Footer = () => {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-display font-semibold text-foreground mb-4">{category}</h4>
+              <h4 className="font-display font-semibold text-white mb-4">{category}</h4>
               <ul className="space-y-3">
                 {links.map((link) => {
                   const legalRoutes: Record<string, string> = {
