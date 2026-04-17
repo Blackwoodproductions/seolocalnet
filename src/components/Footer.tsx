@@ -15,21 +15,9 @@ const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/seo-local-io/" },
 ];
 
-const SEO_TEXTURE = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><g fill='none' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.55'><circle cx='30' cy='30' r='10'/><line x1='38' y1='38' x2='48' y2='48'/><path d='M90 50 l8 -10 l8 6 l10 -14'/><circle cx='90' cy='50' r='1.5'/><circle cx='98' cy='40' r='1.5'/><circle cx='106' cy='46' r='1.5'/><circle cx='116' cy='32' r='1.5'/><path d='M170 30 a8 8 0 1 0 11 11 l-3 3 a8 8 0 1 0 -11 -11z'/><text x='200' y='34' font-family='monospace' font-size='10' fill='white'>%231</text><rect x='20' y='110' width='6' height='18'/><rect x='32' y='102' width='6' height='26'/><rect x='44' y='94' width='6' height='34'/><rect x='56' y='86' width='6' height='42'/><path d='M90 120 h30 M90 130 h22'/><circle cx='84' cy='120' r='2'/><circle cx='84' cy='130' r='2'/><text x='160' y='124' font-family='monospace' font-size='9' fill='white'>SEO</text><circle cx='40' cy='200' r='8'/><line x1='46' y1='206' x2='54' y2='214'/><path d='M100 200 l-6 6 a4 4 0 0 0 0 6 a4 4 0 0 0 6 0 l6 -6 M110 190 l6 -6 a4 4 0 0 1 6 0 a4 4 0 0 1 0 6 l-6 6'/><line x1='106' y1='200' x2='118' y2='188'/><text x='170' y='206' font-family='monospace' font-size='9' fill='white'>RANK</text></g></svg>")`;
-
 const Footer = () => {
   return (
-    <footer className="relative footer-animated-gradient overflow-hidden">
-      {/* Subtle SEO-themed texture overlay */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none mix-blend-overlay"
-        style={{
-          backgroundImage: SEO_TEXTURE,
-          backgroundSize: '240px 240px',
-          opacity: 0.18,
-        }}
-      />
+    <footer className="relative footer-animated-gradient">
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Logo & Description */}
