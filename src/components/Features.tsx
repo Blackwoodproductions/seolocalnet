@@ -45,17 +45,16 @@ const Features = () => {
             Why Choose SEOLOCAL
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Technology That{" "}
-            <span className="text-primary text-glow-cyan">Dominates</span> Rankings
+            AI-Powered Tools for{" "}
+            <span className="text-primary text-glow-cyan">SEO Dominance</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            No one else has what we've built over 22 years. Our platform doesn't guess—it 
-            reverse-engineers exactly what Google wants.
+            Cutting-edge AI tools to optimize, create, and manage your entire SEO strategy.
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {features.map((feature, index) => <motion.div key={index} initial={{
           opacity: 0,
           y: 30
