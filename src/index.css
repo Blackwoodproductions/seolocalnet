@@ -275,6 +275,16 @@
     50% { background-position: 100% 50%; }
   }
 
+  @keyframes footerTextureDrift {
+    0%   { background-position: 0px 0px; }
+    50%  { background-position: 160px 80px; }
+    100% { background-position: 0px 0px; }
+  }
+
+  .footer-texture-drift {
+    animation: footerTextureDrift 18s ease-in-out infinite;
+  }
+
   @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
