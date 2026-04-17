@@ -78,29 +78,29 @@ const Features = () => {
           duration: 0.5,
           delay: index * 0.1
         }} className="group">
-              <div className="h-full glass-card rounded-2xl p-8 transition-all duration-500 hover:border-primary/50 hover:border-glow-cyan">
+              <div className="h-full glass-card rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-primary hover:border-primary cursor-pointer hover:shadow-[0_20px_60px_hsl(var(--primary)/0.45)]">
                 {/* Header row: badge + title on left, icon on right */}
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex-1">
                     {/* Highlight Badge */}
-                    <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
+                    <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3 transition-colors duration-500 group-hover:bg-primary-foreground/20 group-hover:text-primary-foreground">
                       {feature.highlight}
                     </span>
 
                     {/* Title */}
-                    <h3 className="font-display text-xl font-bold text-foreground">
+                    <h3 className="font-display text-xl font-bold text-foreground transition-colors duration-500 group-hover:text-primary-foreground">
                       {feature.title}
                     </h3>
                   </div>
 
                   {/* Icon */}
-                  <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-7 h-7 text-[#754ee9]" />
+                  <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary-foreground/15 transition-all duration-300">
+                    <feature.icon className="w-7 h-7 text-[#754ee9] transition-colors duration-500 group-hover:text-primary-foreground" />
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed transition-colors duration-500 group-hover:text-primary-foreground/90">
                   {feature.description}
                 </p>
               </div>
