@@ -15,7 +15,7 @@ const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/seo-local-io/" },
 ];
 
-const PAPER_TEXTURE = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><defs><filter id='c' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.018' numOctaves='3' seed='7' stitchTiles='stitch'/><feDisplacementMap in='SourceGraphic' scale='40'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/><feComponentTransfer><feFuncA type='gamma' amplitude='1' exponent='1.6' offset='-0.35'/></feComponentTransfer></filter><filter id='cr'><feTurbulence type='turbulence' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.25 0'/></filter></defs><rect width='100%25' height='100%25' fill='white' filter='url(%23c)'/><rect width='100%25' height='100%25' filter='url(%23cr)'/></svg>")`;
+const PAPER_TEXTURE = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'><g fill='none' stroke='white' stroke-width='0.6' opacity='0.9'><line x1='40' y1='40' x2='150' y2='90'/><line x1='150' y1='90' x2='240' y2='50'/><line x1='240' y1='50' x2='290' y2='140'/><line x1='150' y1='90' x2='180' y2='200'/><line x1='40' y1='40' x2='80' y2='180'/><line x1='80' y1='180' x2='180' y2='200'/><line x1='180' y1='200' x2='270' y2='240'/><line x1='80' y1='180' x2='60' y2='280'/><line x1='60' y1='280' x2='180' y2='200'/><line x1='270' y1='240' x2='220' y2='300'/><line x1='220' y1='300' x2='60' y2='280'/><line x1='290' y1='140' x2='270' y2='240'/></g><g fill='white' opacity='0.95'><circle cx='40' cy='40' r='1.6'/><circle cx='150' cy='90' r='1.8'/><circle cx='240' cy='50' r='1.6'/><circle cx='290' cy='140' r='1.6'/><circle cx='80' cy='180' r='1.6'/><circle cx='180' cy='200' r='1.8'/><circle cx='270' cy='240' r='1.6'/><circle cx='60' cy='280' r='1.6'/><circle cx='220' cy='300' r='1.6'/></g></svg>")`;
 
 const Footer = () => {
   return (
@@ -26,7 +26,7 @@ const Footer = () => {
         className="absolute inset-0 pointer-events-none mix-blend-overlay"
         style={{
           backgroundImage: PAPER_TEXTURE,
-          backgroundSize: '600px 600px',
+          backgroundSize: '320px 320px',
           opacity: 0.18,
         }}
       />
