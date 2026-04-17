@@ -192,9 +192,12 @@ const Hero = () => {
         }} className="w-1.5 h-1.5 rounded-full bg-primary" />
         </div>
       </motion.div>
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none" style={{ zIndex: 20 }}>
-        <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="w-full h-16 md:h-20">
-          <polygon points="0,80 0,80 1200,30 1200,80" className="fill-background" />
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none" style={{ zIndex: 20 }}>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none" className="w-full h-32 md:h-48 block">
+          <path
+            d="M0,200 L0,180 Q300,160 600,110 T1200,10 L1200,200 Z"
+            className="fill-background"
+          />
         </svg>
       </div>
     </section>;
