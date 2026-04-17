@@ -167,7 +167,7 @@ const Hero = () => {
             value: "25%",
             label: "Cheaper Than Agencies"
           }].map((stat, index) => <div key={index} className="bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-xl p-8 text-center">
-                <div className="stat-value text-4xl md:text-5xl mb-2">{stat.value}</div>
+                <CountUp value={stat.value} className="stat-value text-4xl md:text-5xl mb-2 block" />
                 <div className="text-white/50 text-sm">{stat.label}</div>
               </div>)}
           </div>
