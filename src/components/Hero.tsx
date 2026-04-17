@@ -4,6 +4,9 @@ import ParticleNetwork from "./ParticleNetwork";
 import StarField from "./StarField";
 const Hero = () => {
   return <section className="relative flex flex-col items-center justify-center overflow-hidden pt-40 pb-32" style={{ backgroundColor: '#030608', minHeight: '100vh' }}>
+      {/* Outer space starfield background */}
+      <StarField />
+
       {/* Circular blur animations */}
       <motion.div
         className="absolute w-[500px] h-[500px] rounded-full opacity-20"
