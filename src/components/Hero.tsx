@@ -64,17 +64,17 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="font-display text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">
-             <span className="text-white">The Only </span>
+             <span className="text-white">SEO Under </span>
             <motion.span
               className="text-accent text-glow-accent inline-block"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              White Label SEO
+              Your Brand.
             </motion.span>
             <br />
-            <span className="text-white">Platform You'll Ever Need</span>
+            <span className="text-white">Built for Agencies. Ready to Scale.</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -88,8 +88,8 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.2
         }} className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-            AI-powered content that reverse-engineers your competition. Automated niche linking 
-            from thousands of categorized real business sites.
+            White-label SEO platform with AI-powered content, automated niche backlinks
+            from 3,000+ real business sites, and measurable results in just 10 days.
           </motion.p>
 
           {/* CTA Buttons */}
