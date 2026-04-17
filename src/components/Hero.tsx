@@ -64,7 +64,7 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="font-display text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">
-             <span className="text-white">SEO Under </span>
+            <span className="text-white">SEO Under </span>
             <motion.span
               className="text-accent text-glow-accent inline-block"
               initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,9 @@ const Hero = () => {
               Your Brand.
             </motion.span>
             <br />
-            <span className="text-white">Built for Agencies. Ready to Scale.</span>
+            <span className="text-white">Built for Agencies.</span>
+            <br />
+            <span className="text-primary text-glow-cyan">Ready to Scale.</span>
           </motion.h1>
 
           {/* Subheading */}
