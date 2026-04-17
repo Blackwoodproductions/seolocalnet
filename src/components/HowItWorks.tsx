@@ -127,7 +127,7 @@ const HowItWorks = () => {
                 {/* Hand-drawn curved arrow to next step (desktop only, not after last) */}
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-6 -translate-y-1/2 w-12 z-20 pointer-events-none">
-                    <CurvedArrow flip={index % 2 === 1} />
+                    <CurvedArrow flip={index % 2 === 1} delay={index * 0.2} />
                   </div>
                 )}
               </motion.div>)}
