@@ -44,7 +44,7 @@ const Guarantee = () => {
             Our Promise
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Our <span className="text-accent text-glow-gold">Guarantee</span>
+            Our <span className="text-primary text-glow-cyan">Guarantee</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             We stand behind every campaign with measurable results and full transparency.
