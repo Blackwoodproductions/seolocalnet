@@ -38,14 +38,14 @@ const Footer = () => {
                 className="h-14 w-auto opacity-80" style={{ filter: 'brightness(0.3) sepia(1) hue-rotate(190deg) saturate(3)' }}
               />
             </a>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
+            <p className="text-white/60 text-sm mb-6 max-w-xs">
               The industry's most powerful white-label SEO platform. 22 years of innovation 
               helping agencies deliver results.
             </p>
             
             {/* Contact Information */}
             <div className="space-y-3 mb-6">
-              <div className="flex items-start gap-3 text-muted-foreground text-sm">
+              <div className="flex items-start gap-3 text-white/60 text-sm">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                 <span>117 NE 1st Avenue, 9th Floor #1046<br />Miami, FL 33131</span>
               </div>
