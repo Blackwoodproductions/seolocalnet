@@ -20,14 +20,14 @@ const PAPER_TEXTURE = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.or
 const Footer = () => {
   return (
     <footer className="relative footer-animated-gradient overflow-hidden">
-      {/* Subtle paper grain texture */}
+      {/* Subtle drifting connecting-lines texture */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none mix-blend-overlay"
+        className="absolute inset-0 pointer-events-none mix-blend-overlay footer-texture-drift"
         style={{
           backgroundImage: PAPER_TEXTURE,
           backgroundSize: '320px 320px',
-          opacity: 0.18,
+          opacity: 0.1,
         }}
       />
       <div className="container mx-auto px-6 py-16 relative z-10">
