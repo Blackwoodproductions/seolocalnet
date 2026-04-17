@@ -15,27 +15,9 @@ const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/seo-local-io/" },
 ];
 
-const SVG_MASK =
-  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'><path d='M0,200 L0,40 Q300,180 600,120 T1200,30 L1200,200 Z' fill='black'/></svg>\")";
-
 const Footer = () => {
   return (
-    <footer className="relative mt-32 md:mt-48 footer-animated-gradient">
-      {/* Divider: same animated gradient as footer body, shaped via SVG mask so it flows continuously */}
-      <div
-        aria-hidden
-        className="absolute left-0 w-full h-32 md:h-48 footer-animated-gradient pointer-events-none"
-        style={{
-          top: 0,
-          transform: 'translateY(-100%)',
-          WebkitMaskImage: SVG_MASK,
-          maskImage: SVG_MASK,
-          WebkitMaskSize: '100% 100%',
-          maskSize: '100% 100%',
-          WebkitMaskRepeat: 'no-repeat',
-          maskRepeat: 'no-repeat',
-        }}
-      />
+    <footer className="relative footer-animated-gradient">
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Logo & Description */}
