@@ -13,7 +13,7 @@ const Hero = () => {
         className="absolute rounded-full pointer-events-none"
         style={{
           width: 700, height: 700,
-          background: 'radial-gradient(circle, hsl(45 100% 70% / 0.55), transparent 70%)',
+          background: 'radial-gradient(circle, hsl(45 100% 70% / 0.18), transparent 70%)',
           filter: 'blur(90px)', top: '-5%', right: '-5%',
         }}
         animate={{ x: [0, 60, -40, 0], y: [0, 40, -30, 0], rotate: [0, 90, 180, 360], scale: [1, 1.1, 0.95, 1] }}
@@ -23,7 +23,7 @@ const Hero = () => {
         className="absolute rounded-full pointer-events-none"
         style={{
           width: 600, height: 600,
-          background: 'radial-gradient(circle, hsl(197 90% 65% / 0.45), transparent 70%)',
+          background: 'radial-gradient(circle, hsl(197 90% 65% / 0.15), transparent 70%)',
           filter: 'blur(100px)', top: '20%', left: '-8%',
         }}
         animate={{ x: [0, 80, -50, 0], y: [0, -40, 50, 0], rotate: [0, -90, -180, -360], scale: [1, 1.15, 0.9, 1] }}
@@ -33,7 +33,7 @@ const Hero = () => {
         className="absolute rounded-full pointer-events-none"
         style={{
           width: 550, height: 550,
-          background: 'radial-gradient(circle, hsl(140 70% 60% / 0.35), transparent 70%)',
+          background: 'radial-gradient(circle, hsl(140 70% 60% / 0.12), transparent 70%)',
           filter: 'blur(110px)', bottom: '-5%', left: '5%',
         }}
         animate={{ x: [0, -50, 60, 0], y: [0, -60, 30, 0], rotate: [0, 120, 240, 360], scale: [1, 0.9, 1.1, 1] }}
@@ -43,7 +43,7 @@ const Hero = () => {
         className="absolute rounded-full pointer-events-none"
         style={{
           width: 500, height: 500,
-          background: 'radial-gradient(circle, hsl(330 85% 70% / 0.4), transparent 70%)',
+          background: 'radial-gradient(circle, hsl(330 85% 70% / 0.14), transparent 70%)',
           filter: 'blur(100px)', bottom: '5%', right: '8%',
         }}
         animate={{ x: [0, -70, 40, 0], y: [0, 50, -40, 0], rotate: [0, -120, -240, -360], scale: [1, 1.1, 0.95, 1] }}
@@ -53,7 +53,7 @@ const Hero = () => {
         className="absolute rounded-full pointer-events-none"
         style={{
           width: 450, height: 450,
-          background: 'radial-gradient(circle, hsl(265 80% 65% / 0.4), transparent 70%)',
+          background: 'radial-gradient(circle, hsl(265 80% 65% / 0.14), transparent 70%)',
           filter: 'blur(110px)', top: '40%', right: '25%',
         }}
         animate={{ x: [0, 50, -60, 0], y: [0, -50, 40, 0], rotate: [0, 90, 180, 360], scale: [1, 1.05, 0.95, 1] }}
