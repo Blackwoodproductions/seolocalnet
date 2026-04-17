@@ -24,6 +24,16 @@ const features = [{
 }];
 const Features = () => {
   return <section id="features" className="py-32 relative overflow-hidden">
+      {/* SVG gradient definition for icon strokes */}
+      <svg width="0" height="0" className="absolute" aria-hidden="true">
+        <defs>
+          <linearGradient id="iconGradientPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--primary))" />
+            <stop offset="100%" stopColor="hsl(var(--accent))" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       {/* Background Elements */}
       <ScrollParallax speed={-0.15} className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <ScrollParallax speed={-0.3} className="absolute inset-0 bg-gradient-radial opacity-50" />
@@ -84,7 +94,7 @@ const Features = () => {
 
                   {/* Icon */}
                   <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary-foreground/15 transition-all duration-300">
-                    <feature.icon className="w-7 h-7 text-[#754ee9] transition-colors duration-500 group-hover:text-primary-foreground" />
+                    <feature.icon className="w-7 h-7 transition-colors duration-500 group-hover:text-primary-foreground" stroke="url(#iconGradientPrimary)" />
                   </div>
                 </div>
 
