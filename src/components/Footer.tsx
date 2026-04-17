@@ -17,8 +17,17 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-b from-background to-surface-dark">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="relative mt-32 md:mt-48" style={{ backgroundColor: '#030608' }}>
+      {/* Diagonal divider transitioning from light section into dark footer */}
+      <div className="absolute left-0 w-full overflow-hidden leading-none pointer-events-none" style={{ top: 0, transform: 'translateY(-99%)', zIndex: 1 }}>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none" className="w-full h-32 md:h-48 block">
+          <path
+            d="M0,200 L0,40 Q300,180 600,120 T1200,30 L1200,200 Z"
+            fill="#030608"
+          />
+        </svg>
+      </div>
+      <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
