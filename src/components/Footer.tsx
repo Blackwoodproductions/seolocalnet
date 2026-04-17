@@ -15,7 +15,7 @@ const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/seo-local-io/" },
 ];
 
-const PAPER_TEXTURE = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")`;
+const PAPER_TEXTURE = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><defs><filter id='c' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.018' numOctaves='3' seed='7' stitchTiles='stitch'/><feDisplacementMap in='SourceGraphic' scale='40'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/><feComponentTransfer><feFuncA type='gamma' amplitude='1' exponent='1.6' offset='-0.35'/></feComponentTransfer></filter><filter id='cr'><feTurbulence type='turbulence' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.25 0'/></filter></defs><rect width='100%25' height='100%25' fill='white' filter='url(%23c)'/><rect width='100%25' height='100%25' filter='url(%23cr)'/></svg>")`;
 
 const Footer = () => {
   return (
@@ -26,8 +26,8 @@ const Footer = () => {
         className="absolute inset-0 pointer-events-none mix-blend-overlay"
         style={{
           backgroundImage: PAPER_TEXTURE,
-          backgroundSize: '220px 220px',
-          opacity: 0.25,
+          backgroundSize: '600px 600px',
+          opacity: 0.18,
         }}
       />
       <div className="container mx-auto px-6 py-16 relative z-10">
