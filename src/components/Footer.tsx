@@ -51,14 +51,14 @@ const Footer = () => {
               </div>
               <a 
                 href="tel:858-201-7994" 
-                className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors"
+                className="flex items-center gap-3 text-white/60 text-sm hover:text-primary transition-colors"
               >
                 <Phone size={16} className="flex-shrink-0" />
                 <span>858-201-7994</span>
               </a>
               <a 
                 href="mailto:support@blackwoodproductions.com" 
-                className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary transition-colors"
+                className="flex items-center gap-3 text-white/60 text-sm hover:text-primary transition-colors"
               >
                 <Mail size={16} className="flex-shrink-0" />
                 <span>support@blackwoodproductions.com</span>
@@ -73,7 +73,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-muted/40 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+                  className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-primary hover:bg-primary/10 transition-all duration-300"
                 >
                   <social.icon size={18} />
                 </a>
