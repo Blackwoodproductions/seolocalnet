@@ -79,15 +79,25 @@ const Features = () => {
           delay: index * 0.1
         }} className="group">
               <div className="h-full glass-card rounded-2xl p-8 transition-all duration-500 hover:border-primary/50 hover:border-glow-cyan">
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-7 h-7 text-[#754ee9]" />
-                </div>
+                {/* Header row: badge + title on left, icon on right */}
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="flex-1">
+                    {/* Highlight Badge */}
+                    <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
+                      {feature.highlight}
+                    </span>
 
-                {/* Highlight Badge */}
-                <span className="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-4">
-                  {feature.highlight}
-                </span>
+                    {/* Title */}
+                    <h3 className="font-display text-xl font-bold text-foreground">
+                      {feature.title}
+                    </h3>
+                  </div>
+
+                  {/* Icon */}
+                  <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="w-7 h-7 text-[#754ee9]" />
+                  </div>
+                </div>
 
                 {/* Content */}
                 <h3 className="font-display text-xl font-bold text-foreground mb-3">
