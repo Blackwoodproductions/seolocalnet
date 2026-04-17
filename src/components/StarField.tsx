@@ -47,14 +47,14 @@ const StarField = () => {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       // Density-based count
-      const count = Math.floor((width * height) / 2200);
+      const count = Math.floor((width * height) / 6000);
       stars = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
         z: Math.random(),
-        size: Math.random() * 1.6 + 0.3,
-        baseOpacity: Math.random() * 0.5 + 0.5,
-        twinkleSpeed: Math.random() * 0.02 + 0.005,
+        size: Math.random() * 1.4 + 0.3,
+        baseOpacity: Math.random() * 0.5 + 0.4,
+        twinkleSpeed: Math.random() * 0.006 + 0.0015,
         twinklePhase: Math.random() * Math.PI * 2,
       }));
     };
