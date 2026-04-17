@@ -48,9 +48,9 @@ const Hero = () => {
           y: 0
         }} transition={{
           duration: 0.6
-        }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+          }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-primary text-sm font-medium">22+ Years of SEO Innovation</span>
+            <span className="text-primary text-sm font-medium">Trusted by Thousands of Agencies</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -64,17 +64,17 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.1
         }} className="font-display text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">
-             <span className="text-white">The Only </span>
+             <span className="text-white">SEO Under </span>
             <motion.span
               className="text-accent text-glow-accent inline-block"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              White Label SEO
+              Your Brand.
             </motion.span>
             <br />
-            <span className="text-white">Platform You'll Ever Need</span>
+            <span className="text-white">Built for Agencies. Ready to Scale.</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -88,8 +88,8 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.2
         }} className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-            AI-powered content that reverse-engineers your competition. Automated niche linking 
-            from thousands of categorized real business sites.
+            White-label SEO platform with AI-powered content, automated niche backlinks
+            from 3,000+ real business sites, and measurable results in just 10 days.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -103,8 +103,8 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.3
         }} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <a href="#demo" className="btn-futuristic flex items-center gap-2 text-lg text-primary-foreground">
-              Start Free Trial
+            <a href="https://calendly.com/q-ratansi/seolocal" target="_blank" rel="noopener noreferrer" className="btn-futuristic flex items-center gap-2 text-lg text-primary-foreground">
+              Book A Demo
               <ArrowRight size={20} />
             </a>
             <a href="#platform" className="btn-outline-glow flex items-center gap-2 text-lg">
@@ -152,17 +152,17 @@ const Hero = () => {
       }} className="max-w-4xl mx-auto mb-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[{
-            value: "500+",
-            label: "Agency Partners"
+            value: "6+",
+            label: "Years of SEO Innovation"
           }, {
-            value: "22",
-            label: "Years Experience"
+            value: "3,167+",
+            label: "Domains in Our Network"
           }, {
-            value: "1M+",
-            label: "Keywords Ranked"
+            value: "10",
+            label: "Days to First Results"
           }, {
-            value: "10K+",
-            label: "Client Websites"
+            value: "25%",
+            label: "Cheaper Than Agencies"
           }].map((stat, index) => <div key={index} className="bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-xl p-8 text-center">
                 <div className="stat-value text-4xl md:text-5xl mb-2">{stat.value}</div>
                 <div className="text-white/50 text-sm">{stat.label}</div>

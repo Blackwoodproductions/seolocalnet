@@ -1,36 +1,26 @@
 import { motion } from "framer-motion";
 import ScrollParallax from "./ScrollParallax";
-import { Brain, Link2, BarChart3, Users, Layers, Shield } from "lucide-react";
+import { Brain, Layers, FileText, BarChart3 } from "lucide-react";
 const features = [{
   icon: Brain,
-  title: "AI Content Engine",
-  description: "Our AI analyzes your top 5 competitors and the top 5 ranking articles for each keyword, then creates superior content that's engineered to outrank them.",
-  highlight: "Reverse-Engineer the Competition"
-}, {
-  icon: Link2,
-  title: "Automated Niche Linking",
-  description: "Every client website is categorized into our network of 1000s of real business sites, enabling automatic, highly relevant backlink acquisition.",
-  highlight: "Real Business Backlinks"
-}, {
-  icon: BarChart3,
-  title: "Real-Time Rank Tracking",
-  description: "Monitor rankings across Google, Yahoo, and Bing with comprehensive reports including Map Pack, Rich Snippets, and AI Overview tracking.",
-  highlight: "Multi-Search Engine Tracking"
-}, {
-  icon: Users,
-  title: "Complete White Labeling",
-  description: "Your brand, your platform. Fully rebrandable dashboard that your clients will think you built yourself. Zero mention of our name anywhere.",
-  highlight: "100% Your Brand"
+  title: "Custom AI-Powered SEO Strategies",
+  description: "Tailored AI-driven strategies designed to meet your business goals and maximize your online visibility across every channel.",
+  highlight: "Tailored Strategy"
 }, {
   icon: Layers,
-  title: "Wholesale Pricing",
-  description: "Buy at wholesale, sell at retail. We give you the tools and the margins to build a profitable SEO business.",
-  highlight: "Built for Agencies"
+  title: "Comprehensive On-Page Optimization",
+  description: "Advanced AI tools ensure your website's structure, content, and keywords are fully optimized for search engines.",
+  highlight: "Full-Stack Optimization"
 }, {
-  icon: Shield,
-  title: "22 Years of Trust",
-  description: "We've been perfecting this platform since before SEO was mainstream. Our technology is battle-tested and continuously evolving.",
-  highlight: "Industry Veterans"
+  icon: FileText,
+  title: "Content Creation & Marketing",
+  description: "Generate high-quality, SEO-rich content that attracts your target audience and establishes your brand authority.",
+  highlight: "AI Content Engine"
+}, {
+  icon: BarChart3,
+  title: "Rapid Results & Transparent Reporting",
+  description: "Experience noticeable improvements within 30 days with clear, detailed reporting on every campaign metric.",
+  highlight: "Results in 30 Days"
 }];
 const Features = () => {
   return <section id="features" className="py-32 relative overflow-hidden">
@@ -55,17 +45,16 @@ const Features = () => {
             Why Choose SEOLOCAL
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Technology That{" "}
-            <span className="text-primary text-glow-cyan">Dominates</span> Rankings
+            AI-Powered Tools for{" "}
+            <span className="text-primary text-glow-cyan">SEO Dominance</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            No one else has what we've built over 22 years. Our platform doesn't guess—it 
-            reverse-engineers exactly what Google wants.
+            Cutting-edge AI tools to optimize, create, and manage your entire SEO strategy.
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {features.map((feature, index) => <motion.div key={index} initial={{
           opacity: 0,
           y: 30
