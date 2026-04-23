@@ -49,29 +49,33 @@ const Hero = () => {
       {/* Decorative lines */}
       <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
-      {/* Subtle launching rocket behind hero text */}
+      {/* Subtle rocket flying randomly across the hero */}
       <motion.div
         aria-hidden
-        className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-0"
-        style={{ top: '52%' }}
-        initial={{ y: 280, opacity: 0 }}
-        animate={{ y: [-260, -260, 280, 280], opacity: [0, 0.18, 0.18, 0] }}
+        className="absolute pointer-events-none z-0"
+        style={{ top: 0, left: 0 }}
+        initial={{ x: '10vw', y: '80vh', rotate: -30, opacity: 0 }}
+        animate={{
+          x: ['10vw', '75vw', '30vw', '85vw', '15vw', '60vw', '10vw'],
+          y: ['80vh', '20vh', '55vh', '10vh', '40vh', '70vh', '80vh'],
+          rotate: [-30, 35, -10, 50, -45, 20, -30],
+          opacity: [0, 0.2, 0.2, 0.2, 0.2, 0.2, 0],
+        }}
         transition={{
-          duration: 14,
-          times: [0, 0.15, 0.85, 1],
+          duration: 38,
           repeat: Infinity,
           ease: 'easeInOut',
-          repeatDelay: 4,
+          times: [0, 0.18, 0.36, 0.54, 0.72, 0.9, 1],
         }}
       >
         <div className="relative flex flex-col items-center">
-          <Rocket className="w-16 h-16 md:w-20 md:h-20 text-primary/40 -rotate-12" strokeWidth={1.2} />
+          <Rocket className="w-14 h-14 md:w-20 md:h-20 text-primary/50" strokeWidth={1.2} />
           {/* Exhaust trail */}
           <div
             className="w-1.5 md:w-2 mt-1 rounded-full"
             style={{
-              height: 220,
-              background: 'linear-gradient(to bottom, hsl(var(--primary) / 0.25), hsl(var(--accent) / 0.1), transparent)',
+              height: 180,
+              background: 'linear-gradient(to bottom, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.12), transparent)',
               filter: 'blur(6px)',
             }}
           />
