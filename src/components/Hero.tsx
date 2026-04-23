@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Globe, TrendingUp, Rocket } from "lucide-react";
+import { ArrowRight, Zap, Globe, TrendingUp, Rocket, Calendar, Network, Clock, BadgePercent } from "lucide-react";
 import ParticleNetwork from "./ParticleNetwork";
 import StarField from "./StarField";
 import CountUp from "./CountUp";
