@@ -6,7 +6,7 @@ const footerLinks = {
   Product: ["Features", "Pricing", "Integrations", "Changelog"],
   Resources: ["Documentation", "Help Center", "Blog", "Webinars"],
   Company: ["About Us", "Careers", "Contact", "Partners"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"],
+  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security", "Glossary"],
 };
 
 const socialLinks = [
@@ -95,6 +95,7 @@ const Footer = () => {
                     "Terms of Service": "/terms",
                     "Cookie Policy": "/cookies",
                     "Security": "/security",
+                    "Glossary": "/glossary",
                   };
                   const route = legalRoutes[link];
                   return (
