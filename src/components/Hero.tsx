@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap, Globe, TrendingUp } from "lucide-react";
+import { ArrowRight, Zap, Globe, TrendingUp, Rocket } from "lucide-react";
 import ParticleNetwork from "./ParticleNetwork";
 import StarField from "./StarField";
 import CountUp from "./CountUp";
@@ -48,7 +48,36 @@ const Hero = () => {
 
       {/* Decorative lines */}
       <div className="absolute top-32 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-      
+
+      {/* Subtle launching rocket behind hero text */}
+      <motion.div
+        aria-hidden
+        className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-0"
+        style={{ top: '52%' }}
+        initial={{ y: 280, opacity: 0 }}
+        animate={{ y: [-260, -260, 280, 280], opacity: [0, 0.18, 0.18, 0] }}
+        transition={{
+          duration: 14,
+          times: [0, 0.15, 0.85, 1],
+          repeat: Infinity,
+          ease: 'easeInOut',
+          repeatDelay: 4,
+        }}
+      >
+        <div className="relative flex flex-col items-center">
+          <Rocket className="w-16 h-16 md:w-20 md:h-20 text-primary/40 -rotate-12" strokeWidth={1.2} />
+          {/* Exhaust trail */}
+          <div
+            className="w-1.5 md:w-2 mt-1 rounded-full"
+            style={{
+              height: 220,
+              background: 'linear-gradient(to bottom, hsl(var(--primary) / 0.25), hsl(var(--accent) / 0.1), transparent)',
+              filter: 'blur(6px)',
+            }}
+          />
+        </div>
+      </motion.div>
+
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
