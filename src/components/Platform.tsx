@@ -286,9 +286,14 @@ const Platform = () => {
           }} transition={{
             duration: 4,
             repeat: Infinity
-          }} className="absolute -top-4 -right-4 glass-card rounded-xl p-4 border-glow-cyan">
-              <div className="text-2xl font-bold text-primary">119</div>
-              <div className="text-xs text-muted-foreground">Keywords in Top 10</div>
+          }} className="absolute -top-4 -right-4 glass-card rounded-xl p-4 border-glow-cyan flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                <TrendingUp className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary leading-none">119</div>
+                <div className="text-xs text-muted-foreground mt-1">Keywords in Top 10</div>
+              </div>
             </motion.div>
 
             <motion.div animate={{
@@ -296,9 +301,14 @@ const Platform = () => {
           }} transition={{
             duration: 5,
             repeat: Infinity
-          }} className="absolute -bottom-4 -left-4 glass-card rounded-xl p-4 border-glow-gold">
-              <div className="text-2xl font-bold text-accent">100</div>
-              <div className="text-xs text-muted-foreground">Citation Links Built</div>
+          }} className="absolute -bottom-4 -left-4 glass-card rounded-xl p-4 border-glow-gold flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                <Link2 className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-accent leading-none">100</div>
+                <div className="text-xs text-muted-foreground mt-1">Citation Links Built</div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
