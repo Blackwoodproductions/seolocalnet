@@ -224,13 +224,13 @@ const Glossary = () => {
           />
         </div>
 
-        {/* Alphabet Nav */}
-        {letters.length > 0 && (
+        {/* Alphabet Nav - only show letters on current page when not searching */}
+        {letters.length > 0 && !query && (
           <nav
             aria-label="Glossary alphabet"
             className="flex flex-wrap gap-2 mb-12 p-4 rounded-xl border border-border bg-card sticky top-20 z-10 backdrop-blur"
           >
-            {letters.map((l) => (
+            {paginatedGrouped.map(([l]) => (
               <a
                 key={l}
                 href={`#letter-${l}`}
