@@ -3,6 +3,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 type Term = { term: string; definition: string };
 
@@ -132,6 +141,8 @@ const glossary: Term[] = [
 
 const Glossary = () => {
   const [query, setQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -152,6 +163,41 @@ const Glossary = () => {
   }, [filtered]);
 
   const letters = grouped.map(([l]) => l);
+
+  // Pagination logic
+  const paginatedGrouped = useMemo(() => {
+    if (query) return grouped; // Show all when searching
+    
+    let allTerms: { letter: string; term: Term }[] = [];
+    for (const [letter, terms] of grouped) {
+      for (const term of terms) {
+        allTerms.push({ letter, term });
+      }
+    }
+    
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageTerms = allTerms.slice(startIndex, endIndex);
+    
+    // Re-group by letter for display
+    const map = new Map<string, Term[]>();
+    for (const { letter, term } of pageTerms) {
+      if (!map.has(letter)) map.set(letter, []);
+      map.get(letter)!.push(term);
+    }
+    return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
+  }, [grouped, currentPage, query]);
+
+  const totalItems = useMemo(() => {
+    return grouped.reduce((acc, [, terms]) => acc + terms.length, 0);
+  }, [grouped]);
+
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  // Reset to page 1 when searching
+  useMemo(() => {
+    if (query) setCurrentPage(1);
+  }, [query]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -178,13 +224,13 @@ const Glossary = () => {
           />
         </div>
 
-        {/* Alphabet Nav */}
-        {letters.length > 0 && (
+        {/* Alphabet Nav - only show letters on current page when not searching */}
+        {letters.length > 0 && !query && (
           <nav
             aria-label="Glossary alphabet"
             className="flex flex-wrap gap-2 mb-12 p-4 rounded-xl border border-border bg-card sticky top-20 z-10 backdrop-blur"
           >
-            {letters.map((l) => (
+            {paginatedGrouped.map(([l]) => (
               <a
                 key={l}
                 href={`#letter-${l}`}
@@ -197,35 +243,86 @@ const Glossary = () => {
         )}
 
         {/* Terms */}
-        {grouped.length === 0 ? (
+        {paginatedGrouped.length === 0 ? (
           <p className="text-muted-foreground text-center py-12">
             No terms found matching "{query}".
           </p>
         ) : (
-          <div className="space-y-12">
-            {grouped.map(([letter, terms]) => (
-              <section key={letter} id={`letter-${letter}`} className="scroll-mt-32">
-                <h2 className="text-3xl font-display font-bold text-primary mb-6 pb-2 border-b border-border">
-                  {letter}
-                </h2>
-                <dl className="space-y-6">
-                  {terms.map((t) => (
-                    <div
-                      key={t.term}
-                      className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors duration-300"
-                    >
-                      <dt className="font-display font-semibold text-foreground mb-1">
-                        {t.term}
-                      </dt>
-                      <dd className="text-muted-foreground text-sm leading-relaxed">
-                        {t.definition}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </section>
-            ))}
-          </div>
+          <>
+            <div className="space-y-12">
+              {paginatedGrouped.map(([letter, terms]) => (
+                <section key={letter} id={`letter-${letter}`} className="scroll-mt-32">
+                  <h2 className="text-3xl font-display font-bold text-primary mb-6 pb-2 border-b border-border">
+                    {letter}
+                  </h2>
+                  <dl className="space-y-6">
+                    {terms.map((t) => (
+                      <div
+                        key={t.term}
+                        className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors duration-300"
+                      >
+                        <dt className="font-display font-semibold text-foreground mb-1">
+                          {t.term}
+                        </dt>
+                        <dd className="text-muted-foreground text-sm leading-relaxed">
+                          {t.definition}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {!query && totalPages > 1 && (
+              <div className="mt-12 flex flex-col items-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  Showing {((currentPage - 1) * itemsPerPage) + 1} - {Math.min(currentPage * itemsPerPage, totalItems)} of {totalItems} terms
+                </p>
+                <Pagination>
+                  <PaginationContent>
+                    <PaginationItem>
+                      <PaginationPrevious
+                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                        className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      />
+                    </PaginationItem>
+
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                      // Show first page, last page, current page, and pages around current
+                      const shouldShow = page === 1 || page === totalPages || Math.abs(page - currentPage) <= 1;
+                      const showEllipsisBefore = page > 2 && page === currentPage - 1 && currentPage > 3;
+                      const showEllipsisAfter = page < totalPages - 1 && page === currentPage + 1 && currentPage < totalPages - 2;
+
+                      if (!shouldShow) return null;
+
+                      return (
+                        <PaginationItem key={page}>
+                          {showEllipsisBefore && <PaginationEllipsis />}
+                          <PaginationLink
+                            onClick={() => setCurrentPage(page)}
+                            isActive={currentPage === page}
+                            className="cursor-pointer"
+                          >
+                            {page}
+                          </PaginationLink>
+                          {showEllipsisAfter && <PaginationEllipsis />}
+                        </PaginationItem>
+                      );
+                    })}
+
+                    <PaginationItem>
+                      <PaginationNext
+                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                        className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      />
+                    </PaginationItem>
+                  </PaginationContent>
+                </Pagination>
+              </div>
+            )}
+          </>
         )}
       </main>
       <Footer />
