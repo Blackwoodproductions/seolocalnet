@@ -301,9 +301,14 @@ const Platform = () => {
           }} transition={{
             duration: 5,
             repeat: Infinity
-          }} className="absolute -bottom-4 -left-4 glass-card rounded-xl p-4 border-glow-gold">
-              <div className="text-2xl font-bold text-accent">100</div>
-              <div className="text-xs text-muted-foreground">Citation Links Built</div>
+          }} className="absolute -bottom-4 -left-4 glass-card rounded-xl p-4 border-glow-gold flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                <Link2 className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-accent leading-none">100</div>
+                <div className="text-xs text-muted-foreground mt-1">Citation Links Built</div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
