@@ -215,13 +215,13 @@ const Hero = () => {
             icon: BadgePercent,
             value: "25%",
             label: "Cheaper Than Agencies"
-          }].map((stat, index) => <div key={index} className="bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 text-left">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <stat.icon className="w-6 h-6 text-primary" />
+          }].map((stat, index) => <div key={index} className="bg-primary/10 border border-primary/20 backdrop-blur-sm rounded-xl p-5 flex items-center gap-3 text-left">
+                <div className="w-11 h-11 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <stat.icon className="w-5 h-5 text-primary" />
                 </div>
-                <div className="min-w-0">
-                  <CountUp value={stat.value} className="stat-value text-3xl md:text-4xl block leading-tight" />
-                  <div className="text-white/50 text-xs md:text-sm mt-1">{stat.label}</div>
+                <div className="min-w-0 flex-1">
+                  <CountUp value={stat.value} className="stat-value text-2xl md:text-3xl block leading-none" />
+                  <div className="text-white/50 text-xs mt-1.5 leading-snug">{stat.label}</div>
                 </div>
               </div>)}
           </div>
