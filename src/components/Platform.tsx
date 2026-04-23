@@ -234,72 +234,48 @@ const Platform = () => {
                     <div className="w-3 h-3 rounded-full bg-primary/60"></div>
                   </div>
                   <div className="flex-1 flex justify-center">
-                    <div className="px-4 py-1.5 rounded-md bg-secondary text-muted-foreground text-xs">
-                      youragency.com/dashboard
-                    </div>
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={screens[activeIndex].url}
+                        initial={{ opacity: 0, y: -4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 4 }}
+                        transition={{ duration: 0.3 }}
+                        className="px-4 py-1.5 rounded-md bg-secondary text-muted-foreground text-xs"
+                      >
+                        {screens[activeIndex].url}
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
 
-                {/* Dashboard Content */}
-                <div className="p-6 space-y-4">
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div>
-                      <div className="w-32 h-4 bg-muted rounded"></div>
-                      <div className="w-20 h-3 bg-muted/50 rounded mt-2"></div>
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-primary/20"></div>
-                  </div>
+                {/* Slideshow Content */}
+                <div className="relative min-h-[440px]">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={screens[activeIndex].id}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    >
+                      <ActiveScreen />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
 
-                  {/* Stats Row */}
-                  <div className="grid grid-cols-4 gap-3">
-                    {[{
-                    value: "4.2K",
-                    label: "Views",
-                    trend: "+100%"
-                  }, {
-                    value: "3.4K",
-                    label: "Visits",
-                    trend: "+100%"
-                  }, {
-                    value: "3.1K",
-                    label: "Visitors",
-                    trend: "+100%"
-                  }, {
-                    value: "0:16",
-                    label: "Duration",
-                    trend: "+100%"
-                  }].map((stat, i) => <div key={i} className="p-3 rounded-lg bg-secondary/50 border border-border">
-                        <div className="text-lg font-bold text-foreground">{stat.value}</div>
-                        <div className="text-xs text-muted-foreground">{stat.label}</div>
-                        <div className="text-xs text-primary mt-1">↑ {stat.trend}</div>
-                      </div>)}
-                  </div>
-
-                  {/* Chart Area */}
-                  <div className="p-4 rounded-lg bg-secondary/30 border border-border">
-                    <div className="flex items-end gap-1 h-24">
-                      {[40, 65, 55, 80, 70, 90, 75, 85, 95, 70, 85, 100].map((height, i) => <div key={i} className="flex-1 flex flex-col gap-0.5">
-                          <div className="bg-gradient-to-t from-primary to-primary/50 rounded-t" style={{
-                        height: `${height * 0.6}%`
-                      }}></div>
-                          <div className="bg-gradient-to-t from-accent/60 to-accent/30 rounded-t" style={{
-                        height: `${height * 0.4}%`
-                      }}></div>
-                        </div>)}
-                    </div>
-                  </div>
-
-                  {/* Table Preview */}
-                  <div className="space-y-2">
-                    {[1, 2, 3].map(i => <div key={i} className="flex items-center gap-4 p-3 rounded-lg bg-secondary/30 border border-border">
-                        <div className="w-3/5 h-3 bg-muted rounded"></div>
-                        <div className="px-2 py-1 rounded bg-primary/20 text-primary text-xs font-medium">
-                          Top 10
-                        </div>
-                        <div className="text-xs text-primary">↑ 5</div>
-                      </div>)}
-                  </div>
+                {/* Slide Indicators */}
+                <div className="flex items-center justify-center gap-2 pb-4 pt-2 border-t border-border">
+                  {screens.map((screen, i) => (
+                    <button
+                      key={screen.id}
+                      onClick={() => setActiveIndex(i)}
+                      aria-label={`Show ${screen.label}`}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        i === activeIndex ? "w-8 bg-primary" : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
