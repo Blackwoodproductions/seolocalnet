@@ -141,6 +141,8 @@ const glossary: Term[] = [
 
 const Glossary = () => {
   const [query, setQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -161,6 +163,41 @@ const Glossary = () => {
   }, [filtered]);
 
   const letters = grouped.map(([l]) => l);
+
+  // Pagination logic
+  const paginatedGrouped = useMemo(() => {
+    if (query) return grouped; // Show all when searching
+    
+    let allTerms: { letter: string; term: Term }[] = [];
+    for (const [letter, terms] of grouped) {
+      for (const term of terms) {
+        allTerms.push({ letter, term });
+      }
+    }
+    
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageTerms = allTerms.slice(startIndex, endIndex);
+    
+    // Re-group by letter for display
+    const map = new Map<string, Term[]>();
+    for (const { letter, term } of pageTerms) {
+      if (!map.has(letter)) map.set(letter, []);
+      map.get(letter)!.push(term);
+    }
+    return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
+  }, [grouped, currentPage, query]);
+
+  const totalItems = useMemo(() => {
+    return grouped.reduce((acc, [, terms]) => acc + terms.length, 0);
+  }, [grouped]);
+
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  // Reset to page 1 when searching
+  useMemo(() => {
+    if (query) setCurrentPage(1);
+  }, [query]);
 
   return (
     <div className="min-h-screen bg-background">
