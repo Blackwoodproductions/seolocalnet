@@ -1,7 +1,139 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import ScrollParallax from "./ScrollParallax";
-import { Check, Play } from "lucide-react";
+import { Check, Play, TrendingUp, Search, Link2, MapPin } from "lucide-react";
 const platformFeatures = ["Full white-label dashboard with your branding", "Real-time keyword ranking across all major search engines", "AI-powered competitor content analysis", "Automated citation and backlink building", "Detailed analytics and visitor tracking", "Google My Business integration", "Multi-search engine rank tracking (Google, Yahoo, Bing)", "Map Pack, Rich Snippet, and AI Overview monitoring"];
+
+const AnalyticsScreen = () => (
+  <div className="p-6 space-y-4">
+    <div className="flex items-center justify-between mb-6">
+      <div>
+        <div className="text-sm font-semibold text-foreground">Analytics Overview</div>
+        <div className="text-xs text-muted-foreground mt-1">Last 30 days</div>
+      </div>
+      <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+        <TrendingUp className="w-5 h-5 text-primary" />
+      </div>
+    </div>
+    <div className="grid grid-cols-4 gap-3">
+      {[
+        { value: "4.2K", label: "Views", trend: "+100%" },
+        { value: "3.4K", label: "Visits", trend: "+87%" },
+        { value: "3.1K", label: "Visitors", trend: "+72%" },
+        { value: "0:16", label: "Duration", trend: "+24%" },
+      ].map((stat, i) => (
+        <div key={i} className="p-3 rounded-lg bg-secondary/50 border border-border">
+          <div className="text-lg font-bold text-foreground">{stat.value}</div>
+          <div className="text-xs text-muted-foreground">{stat.label}</div>
+          <div className="text-xs text-primary mt-1">↑ {stat.trend}</div>
+        </div>
+      ))}
+    </div>
+    <div className="p-4 rounded-lg bg-secondary/30 border border-border">
+      <div className="flex items-end gap-1 h-24">
+        {[40, 65, 55, 80, 70, 90, 75, 85, 95, 70, 85, 100].map((height, i) => (
+          <div key={i} className="flex-1 flex flex-col gap-0.5">
+            <div className="bg-gradient-to-t from-primary to-primary/50 rounded-t" style={{ height: `${height * 0.6}%` }} />
+            <div className="bg-gradient-to-t from-accent/60 to-accent/30 rounded-t" style={{ height: `${height * 0.4}%` }} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const RankTrackingScreen = () => (
+  <div className="p-6 space-y-4">
+    <div className="flex items-center justify-between mb-6">
+      <div>
+        <div className="text-sm font-semibold text-foreground">Keyword Rankings</div>
+        <div className="text-xs text-muted-foreground mt-1">Google · Bing · Yahoo</div>
+      </div>
+      <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+        <Search className="w-5 h-5 text-accent" />
+      </div>
+    </div>
+    <div className="grid grid-cols-3 gap-3">
+      {[
+        { value: "119", label: "Top 10", trend: "+12" },
+        { value: "284", label: "Top 50", trend: "+38" },
+        { value: "47", label: "Map Pack", trend: "+9" },
+      ].map((stat, i) => (
+        <div key={i} className="p-3 rounded-lg bg-secondary/50 border border-border">
+          <div className="text-lg font-bold text-foreground">{stat.value}</div>
+          <div className="text-xs text-muted-foreground">{stat.label}</div>
+          <div className="text-xs text-primary mt-1">↑ {stat.trend}</div>
+        </div>
+      ))}
+    </div>
+    <div className="space-y-2">
+      {[
+        { kw: "local seo agency", rank: "Top 3", change: "↑ 5" },
+        { kw: "white label seo", rank: "Top 10", change: "↑ 2" },
+        { kw: "seo dashboard", rank: "Top 5", change: "↑ 8" },
+        { kw: "rank tracker tool", rank: "Top 10", change: "↑ 3" },
+      ].map((row, i) => (
+        <div key={i} className="flex items-center gap-4 p-3 rounded-lg bg-secondary/30 border border-border">
+          <div className="flex-1 text-xs text-foreground truncate">{row.kw}</div>
+          <div className="px-2 py-1 rounded bg-primary/20 text-primary text-xs font-medium">{row.rank}</div>
+          <div className="text-xs text-primary w-8 text-right">{row.change}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const CitationsScreen = () => (
+  <div className="p-6 space-y-4">
+    <div className="flex items-center justify-between mb-6">
+      <div>
+        <div className="text-sm font-semibold text-foreground">Citation Builder</div>
+        <div className="text-xs text-muted-foreground mt-1">Automated backlinks</div>
+      </div>
+      <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+        <Link2 className="w-5 h-5 text-primary" />
+      </div>
+    </div>
+    <div className="grid grid-cols-2 gap-3">
+      {[
+        { value: "100", label: "Citations Built", trend: "+24 this week" },
+        { value: "98%", label: "Live Rate", trend: "Verified" },
+      ].map((stat, i) => (
+        <div key={i} className="p-3 rounded-lg bg-secondary/50 border border-border">
+          <div className="text-lg font-bold text-foreground">{stat.value}</div>
+          <div className="text-xs text-muted-foreground">{stat.label}</div>
+          <div className="text-xs text-primary mt-1">{stat.trend}</div>
+        </div>
+      ))}
+    </div>
+    <div className="space-y-2">
+      {[
+        { src: "Yelp", status: "Live", da: "DA 93" },
+        { src: "Yellow Pages", status: "Live", da: "DA 86" },
+        { src: "Apple Maps", status: "Live", da: "DA 100" },
+        { src: "Bing Places", status: "Live", da: "DA 95" },
+        { src: "Foursquare", status: "Pending", da: "DA 91" },
+      ].map((row, i) => (
+        <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-secondary/30 border border-border">
+          <div className="w-7 h-7 rounded bg-primary/20 flex items-center justify-center">
+            <MapPin className="w-3.5 h-3.5 text-primary" />
+          </div>
+          <div className="flex-1 text-xs text-foreground">{row.src}</div>
+          <div className="text-xs text-muted-foreground">{row.da}</div>
+          <div className={`px-2 py-1 rounded text-xs font-medium ${row.status === "Live" ? "bg-primary/20 text-primary" : "bg-accent/20 text-accent"}`}>
+            {row.status}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const screens = [
+  { id: "analytics", label: "Analytics", url: "youragency.com/analytics", Component: AnalyticsScreen },
+  { id: "rankings", label: "Rank Tracking", url: "youragency.com/rankings", Component: RankTrackingScreen },
+  { id: "citations", label: "Citations", url: "youragency.com/citations", Component: CitationsScreen },
+];
 const Platform = () => {
   return <section id="platform" className="py-32 relative overflow-hidden">
       {/* Background */}
