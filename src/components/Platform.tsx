@@ -135,6 +135,17 @@ const screens = [
   { id: "citations", label: "Citations", url: "youragency.com/citations", Component: CitationsScreen },
 ];
 const Platform = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % screens.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const ActiveScreen = screens[activeIndex].Component;
+
   return <section id="platform" className="py-32 relative overflow-hidden">
       {/* Background */}
       <ScrollParallax speed={-0.1} className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
