@@ -243,35 +243,86 @@ const Glossary = () => {
         )}
 
         {/* Terms */}
-        {grouped.length === 0 ? (
+        {paginatedGrouped.length === 0 ? (
           <p className="text-muted-foreground text-center py-12">
             No terms found matching "{query}".
           </p>
         ) : (
-          <div className="space-y-12">
-            {grouped.map(([letter, terms]) => (
-              <section key={letter} id={`letter-${letter}`} className="scroll-mt-32">
-                <h2 className="text-3xl font-display font-bold text-primary mb-6 pb-2 border-b border-border">
-                  {letter}
-                </h2>
-                <dl className="space-y-6">
-                  {terms.map((t) => (
-                    <div
-                      key={t.term}
-                      className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors duration-300"
-                    >
-                      <dt className="font-display font-semibold text-foreground mb-1">
-                        {t.term}
-                      </dt>
-                      <dd className="text-muted-foreground text-sm leading-relaxed">
-                        {t.definition}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </section>
-            ))}
-          </div>
+          <>
+            <div className="space-y-12">
+              {paginatedGrouped.map(([letter, terms]) => (
+                <section key={letter} id={`letter-${letter}`} className="scroll-mt-32">
+                  <h2 className="text-3xl font-display font-bold text-primary mb-6 pb-2 border-b border-border">
+                    {letter}
+                  </h2>
+                  <dl className="space-y-6">
+                    {terms.map((t) => (
+                      <div
+                        key={t.term}
+                        className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors duration-300"
+                      >
+                        <dt className="font-display font-semibold text-foreground mb-1">
+                          {t.term}
+                        </dt>
+                        <dd className="text-muted-foreground text-sm leading-relaxed">
+                          {t.definition}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {!query && totalPages > 1 && (
+              <div className="mt-12 flex flex-col items-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  Showing {((currentPage - 1) * itemsPerPage) + 1} - {Math.min(currentPage * itemsPerPage, totalItems)} of {totalItems} terms
+                </p>
+                <Pagination>
+                  <PaginationContent>
+                    <PaginationItem>
+                      <PaginationPrevious
+                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                        className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      />
+                    </PaginationItem>
+
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                      // Show first page, last page, current page, and pages around current
+                      const shouldShow = page === 1 || page === totalPages || Math.abs(page - currentPage) <= 1;
+                      const showEllipsisBefore = page > 2 && page === currentPage - 1 && currentPage > 3;
+                      const showEllipsisAfter = page < totalPages - 1 && page === currentPage + 1 && currentPage < totalPages - 2;
+
+                      if (!shouldShow) return null;
+
+                      return (
+                        <PaginationItem key={page}>
+                          {showEllipsisBefore && <PaginationEllipsis />}
+                          <PaginationLink
+                            onClick={() => setCurrentPage(page)}
+                            isActive={currentPage === page}
+                            className="cursor-pointer"
+                          >
+                            {page}
+                          </PaginationLink>
+                          {showEllipsisAfter && <PaginationEllipsis />}
+                        </PaginationItem>
+                      );
+                    })}
+
+                    <PaginationItem>
+                      <PaginationNext
+                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                        className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                      />
+                    </PaginationItem>
+                  </PaginationContent>
+                </Pagination>
+              </div>
+            )}
+          </>
         )}
       </main>
       <Footer />
